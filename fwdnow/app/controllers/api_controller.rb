@@ -8,6 +8,7 @@ class ApiController < ApplicationController
       :appkey => 'JM1WE0MPZPS6BETVQ94DH2VFUSKUHW4IXC1OL7AS',
       :testMode => true,
       :frontPhotoUrl => params[:photo_url],
+      :profilePhotoUrl => params[:photo_url],
       :message => params[:message],
       :recipients => [ # TODO - from params[:zipcode]
          {

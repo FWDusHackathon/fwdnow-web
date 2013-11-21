@@ -10,25 +10,15 @@
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=672186636154514";
   fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
-
-      // twitter
-      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
 </script>
   <div class="fb-share-button" data-href="http://fwdnow.com" data-width="100" data-type="button"></div>
-    <a href="https://twitter.com/share"
-      class="twitter-share-button"
-      data-related="fwd_us"
-      data-url="http://fwdnow.com"
-      data-lang="en"
-      data-text="I am moving #fwdnow with @shakira to support immigration reform. Join us"
-      data-size="large"
-      data-count="none">Tweet</a>
+
+  <a id="twitter-share-button" href="https://twitter.com/share">Tweet</a>
 
   Call congress:
   <form action="https://secure.mcommons.com/profiles/join" method="post">
     <input type="hidden" name="redirect_to" value="http://www.fwd.us/call_thank_you" />
-    <input type="text" class="text" name="person[postal_code]" placeholder="Zip Code" value="">
+    <input id="zipcode" type="text" class="text" name="person[postal_code]" placeholder="Zip Code" value="">
     <input type="hidden" name="mconnect" value="VO5368E793DE4ECCFA7910A7CC1D47A6FF" />
           (FWD.us House Targets (TA))
           <label>Phone Number:</label>
@@ -42,16 +32,48 @@
   </div>
 
   <script>
-    // TODO on button call
-    $.ajaxSetup({
-      headers: {
-        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+    function popupwindow(url, w, h) {
+      var left = (screen.width/2)-(w/2);
+      var top = (screen.height/2)-(h/2);
+      return window.open(url, "", 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+    }
+    $('#twitter-share-button').click(function(e) {
+      e.preventDefault();
+      var rep = JSON.parse(localStorage.getItem('congressman'));
+      popupwindow("https://twitter.com/share?" + $.param({
+        url: "http://fwdnow.com",
+        related: "fwd_us",
+        text: "I am moving #fwdnow with @shakira to support immigration reform. Join us" +
+          (rep ? " Rep. @" + rep.twitter_id : "")
+      }), 600, 300);
+    });
+    $('input#zipcode').change(function(e) {
+      var zipcode = $('input#zipcode').val();
+      if (zipcode.length < 5) {
+        localStorage.removeItem('congressman');
+      }
+      if (zipcode.length == 5) {
+        $.getJSON("https://congress.api.sunlightfoundation.com/legislators/locate", {
+          zip: zipcode,
+          apikey: "afab65a2fbb74ec5b72ea09d9ebfd938"
+        }, function(response) {
+          var house_reps = response.results.filter(function(rep) {
+            return rep.chamber === "house";
+          });
+          // we'll have more than one rep if zip code is ambiguous,
+          // just pick first one
+          if (house_reps.length > 0) {
+            var our_rep = house_reps[0];
+            localStorage.setItem('congressman', JSON.stringify(our_rep));
+          }
+        });
       }
     });
     $('#send_postcard').click(function(e) {
       e.preventDefault();
       $.ajax('/api/send_postcard', {
         type: "POST",
+        headers: {'X-CSRF-Token': '<%= form_authenticity_token.to_s %>'},
         data: {
           message: "Support Immigration reform yo!",
           photo_url: "http://alexeymk.com/images/alexey.jpg", // TODO get photo
