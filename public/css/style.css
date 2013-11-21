@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
 
 body{
-	background-color: black; 
+	background-color: black;
 	color: white;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: lighter;
@@ -154,10 +154,96 @@ a#button:hover {
 #featured-stat{
 	padding-bottom: 15px;
 	font-size: 14px;
-	position:absolute; 
+	position:absolute;
 	bottom:0;
 }
 #featured-quote-left{
 	padding-top: 70px;
 	font-size: 20px;
+}
+
+/*posting popup*/
+
+#posting {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 220px;
+	padding: 15px;
+	background: rgba(0, 0, 0, .75);
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	text-align: center;
+}
+
+#posting .description {
+	text-align: center;
+	display: inline-block;
+	margin-bottom: 12px;
+}
+
+#posting .submit {
+	font-size: 12px;
+	height: 30px;
+	padding: 8px;
+	text-align: center;
+	width: 190px;
+	margin-top: 12px;
+}
+
+#featured-info{
+	padding: 50px 50px 0 50px;
+	width: 450px;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+}
+
+#button {
+	height: 45px;
+	padding: 10px 15px;
+	min-width: 165px;
+	margin-top: 60px;
+}
+
+#button-text{
+	padding-left: 10px;
+	padding-right: 5px;
+	font-size: 16px;
+	height: 25px;
+	line-height: 25px;
+}
+
+#button img{
+	width: 25px;
+}
+
+#featured-quote{
+	font-size: 20px;
+}
+
+#featured-button{
+	margin-top: 80px;
+	height: 40px;
+	width: 250px;
+	background-color: #38a0f4;
+	padding-top: 9px;
+}
+
+#featured-button-logo{
+	float: left;
+	padding-left: 30px;
+	padding-right: 10px;
+}
+
+#featured-button-logo img{
+	width: 30px;
+}
+
+#featured-button-message{
+	padding-left: 10px;
+	font-size: 18px;
 }
