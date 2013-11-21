@@ -29,7 +29,7 @@
     <div id="posting">
       <span class="description">I go FWD with @Shakira to support immigration reform #ready4reform</span>
       <a class="button button_fb submit">
-        <span>Share on Facebook</span>
+        <span><a href="#" id="facebook-share-button">Share on Facebook</a></span>
       </a>
       <a class="button button_tw submit">
         <span><a href="#" id="twitter-share-button">Share on Twitter</a></span>
@@ -110,17 +110,6 @@
 
 <div id="fb-root"></div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script>
-      // loading FB, Twitter code
-      // fb
-      (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=672186636154514";
-  fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
   <div class="fb-share-button" data-href="http://fwdnow.com" data-width="100" data-type="button"></div>
 
   Call congress:
@@ -145,6 +134,12 @@
       var top = (screen.height/2)-(h/2);
       return window.open(url, "", 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
     }
+    $('#facebook-share-button').click(function(e) {
+      e.preventDefault();
+      popupwindow("https://www.facebook.com/sharer/sharer.php?" + $.param({
+        u: "http://fwdnow.us"
+      }), 600, 300);
+    });
     $('#twitter-share-button').click(function(e) {
       e.preventDefault();
       var rep = JSON.parse(localStorage.getItem('congressman'));
