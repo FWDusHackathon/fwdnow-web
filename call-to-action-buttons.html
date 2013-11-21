@@ -44,6 +44,11 @@
   </div>
 
   <script>
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
     // TODO on button call
     $('#send_postcard').click(function(e) {
       e.preventDefault();

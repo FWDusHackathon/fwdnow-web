@@ -1,3 +1,68 @@
+    <div id="fb-root"></div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script>
+      // loading FB, Twitter code
+      // fb
+      (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=672186636154514";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+      // twitter
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+</script>
+  <div class="fb-share-button" data-href="http://fwdnow.com" data-width="100" data-type="button"></div>
+    <a href="https://twitter.com/share"
+      class="twitter-share-button"
+      data-related="fwd_us"
+      data-url="http://fwdnow.com"
+      data-lang="en"
+      data-text="I am moving #fwdnow with @shakira to support immigration reform. Join us"
+      data-size="large"
+      data-count="none">Tweet</a>
+
+  Call congress:
+  <form action="https://secure.mcommons.com/profiles/join" method="post">
+    <input type="hidden" name="redirect_to" value="http://www.fwd.us/call_thank_you" />
+    <input type="text" class="text" name="person[postal_code]" placeholder="Zip Code" value="">
+    <input type="hidden" name="mconnect" value="VO5368E793DE4ECCFA7910A7CC1D47A6FF" />
+          (FWD.us House Targets (TA))
+          <label>Phone Number:</label>
+          <input type="text" name="person[phone]" />
+          <input type="submit" value="Call Me!" />
+  </form>
+
+  <div>
+    Postcards
+    <button id="send_postcard">Send Postcard to Congress</button>
+  </div>
+
+  <script>
+    // TODO on button call
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+    $('#send_postcard').click(function(e) {
+      e.preventDefault();
+      $.ajax('/api/send_postcard', {
+        type: "POST",
+        data: {
+          message: "Support Immigration reform yo!",
+          photo_url: "http://alexeymk.com/images/alexey.jpg", // TODO get photo
+          zipcode: 42410 // TODO forreal
+      }}).always(function(response, status) {
+        console.log(response, status);
+      });
+    });
+  </script>
+
+
 <h1>Listing celebrities</h1>
 
 <table>
