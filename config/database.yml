@@ -11,8 +11,7 @@ test:
   password:
 
 development:
-  adapter: postgresql
-  encoding: unicode
+  adapter: sqlite3
   database: myapp_development
   pool: 5
   password:

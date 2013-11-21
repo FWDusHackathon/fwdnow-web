@@ -1,0 +1,196 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+
+body{
+	background-color: black; 
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: lighter;
+}
+
+#header{
+	float: top;
+	text-align: center;
+	vertical-align: middle;
+	color: white;
+}
+
+.blue-big{
+	color: #38a0f4;
+	font-size: 26px;
+}
+
+.blue-medium{
+	color: #38a0f4;
+	font-size: 18px;
+}
+
+.blue{
+	color: #38a0f4;
+}
+
+#logo{
+	float: left;
+	margin-top: 16px;
+}
+
+#logo img{
+	height: 50px;
+}
+
+
+#title{
+	padding: 30px 0px;
+	text-align: center;
+	font-size: 18px;
+}
+
+
+#count{
+	text-align: right;
+	padding-top: 34px;
+	font-size: 14px;
+}
+
+.featured{
+	height: 482px;
+	margin-bottom: 32px;
+	position: relative;
+}
+
+.featured img{
+	width: 100%;
+}
+
+.medium{
+	margin-bottom: 30px;
+}
+
+.inside2{
+	height: 325px;
+	overflow: hidden;
+}
+
+.inside2 img{
+	width: 100%;
+}
+
+#featured-info{
+	padding-right: 50px;
+	width: 400px;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	//background-color: gray;
+}
+
+// video info
+#video-info{
+	height: 325px;
+	overflow: hidden;
+	position: relative;
+}
+
+#video-info img{
+	width: 100%;
+}
+
+
+#video-quote{
+	width: 300px;
+	position: absolute;
+	z-index: 2;
+	top: 20px;
+	left: 50px;
+}
+
+#video-quote-title{
+	font-size: 25px;
+	padding-bottom: 20px;
+	width: 100%;
+	display: block;
+}
+
+#video-quote-text{
+	font-size: 14px;
+	padding-bottom: 30px;
+	padding-right:110px;
+	display: block;
+}
+
+#video-quote-signature{
+	font-size: 18px;	
+	display: block;
+}
+
+#video-stat{
+	padding-bottom: 15px;
+	font-size: 14px;
+	position:absolute; 
+	bottom:0;
+	left: 50px;
+}
+
+#button{
+	position: absolute;
+	top: 175px;
+	height: 45px;
+	padding: 10px 15px;
+	min-width: 165px;
+	background-color:  #38a0f4;
+}
+
+#button-text{
+	padding-left: 10px;
+	padding-right: 5px;
+	font-size: 16px;
+	height: 25px;
+	line-height: 25px;
+}
+
+#button img{
+	width: 25px;
+}
+
+#featured-quote{
+	padding-top: 70px;
+	font-size: 20px;
+}
+
+#featured-button{
+	margin-top: 80px;
+	height: 40px;
+	width: 250px;
+	background-color: #38a0f4;
+	padding-top: 9px;
+}
+
+#featured-button-logo{
+	float: left;
+	padding-left: 30px;
+	padding-right: 10px;
+	//background-color: green;
+}
+
+#featured-button-logo img{
+	width: 30px;
+}
+
+#featured-button-message{
+	padding-left: 10px;
+	font-size: 18px;
+	//background-color: red;
+}
+
+#featured-stat{
+	padding-bottom: 15px;
+	font-size: 14px;
+	position:absolute; 
+	bottom:0;
+}
+
+#featured-quote-left{
+	padding-top: 70px;
+	font-size: 20px;
+}

@@ -1,4 +1,95 @@
-    <div id="fb-root"></div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3" id="logo"><img src="img/FWDnowLogo.png"></div>
+  <div class="col-md-6" id="title">We are all in for immigration reform, so let's all move forward <span class="blue">now</span></div>
+      <div class="col-md-3" id="count"><span class="blue">234,334</span> forwards so far</div>
+     </div>
+   </div>
+
+  <div class="container">
+      <div class="row">
+        <div class="col-md-12" id="main">
+      <div class="featured">
+        <img src="img/Kim-Big.jpg"></img>
+
+        <div id="featured-info">
+          <div id="featured-quote">"#FWDnow and support immigration reform with me"</div>
+
+          <div id="button">
+            <span><img src="img/btnFWD.png"></img></span>
+            <span id="button-text">FWD now with Kim</span>
+          </div>
+
+          <div id="featured-stat"><spam class="blue-big">57,891</spam>people have forwarded with Kim</div>
+        </div>
+      </div>
+        </div>
+  </div>
+</div>
+
+<div class="container">
+      <div class="row">
+        <div class="col-md-6 medium">
+          <div class="inside2"><img src="img/Julianne-Small.jpg"></img><div rel="stylesheet" href="css/style.css" type="text/css">"#FWDnow and support immigration reform with me"</div></div>
+             <!--<div rel="stylesheet" href="css/style.css" type="text/css">"Immigration reform will put 11 million people living in the United States on pathway to citiznenship" -Jualianne Moore</div>-->
+        </div>
+    <div class="col-md-6 medium">
+
+      <div id="video-info">
+          <img src="img/Taboo-Small.jpg"></img>
+
+          <div id="video-quote">
+
+            <span id="video-quote-title">"One Heart, One Beat"</span>
+
+            <span id="video-quote-text">"Taboo's new song opposing Arizona's Bill 1070 against undocumented immigrants"</span>
+
+            <span id="video-quote-signature">-Taboo</span>
+          </div>
+
+          <div id="video-stat"><spam class="blue-medium">41,292 </spam>people have forwarded with Taboo</div>
+      </div>
+
+
+          <!--<div class="video">
+            <img src="img/Taboo-Small.jpg"></img></div>
+              <div id="video">"Taboo's new song opposing Arizona's Bill 1070 against illegal immigration -Taboo</div>-->
+        </div>
+  </div>
+</div>
+
+<div class="container">
+      <div class="row">
+        <div class="col-md-6 medium">
+          <div class="inside2"><img src="img/Aloe-Small.jpg"></img></div>
+              <!--<div id="">"Wake me up" Taboo's new song opposing Arizona's Bill 1070 against illegal immigration -Aloe Ball</div>-->
+        </div>
+    <div class="col-md-6 medium">
+          <div class="inside2"><img src="img/Sarah-Small.jpg"></img></div>
+              <!--<div id="">"Sarah is among "more than 100 musicians and actors [who] have signed a letter to President Obama and members of Congress urging them to pass a bill that provides a 'clear road map to citizenship' for the nation's 11 million unauthorized immigrants."</div>-->
+
+        </div>
+  </div>
+</div>
+
+<div class="container">
+      <div class="row">
+        <div class="col-md-6 medium">
+          <div class="inside2"><img src="img/Oprah-Small.jpg"></img></div>
+              <!--<div id="">
+"It's possible to both enforce our laws and, at the same time, embrace the words on the Statue of Liberty that have welcomed generations of huddled masses to our shores" -Oprah </div>-->
+        </div>
+    <div class="col-md-6 medium">
+          <div class="inside2"><img src="img/Sergio-Small.jpg"></img></div>
+              <!--<div id"">"Two million undocumented people deserve a chance to live their dream and we will all win if they do" Sergio Romo</div>-->
+        </div>
+  </div>
+</div>
+
+
+
+<div id="fb-root"></div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script>
       // loading FB, Twitter code
@@ -83,33 +174,3 @@
       });
     });
   </script>
-
-
-<h1>Listing celebrities</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Message</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @celebrities.each do |celebrity| %>
-      <tr>
-        <td><%= celebrity.name %></td>
-        <td><%= celebrity.message %></td>
-        <td><%= link_to 'Show', celebrity %></td>
-        <td><%= link_to 'Edit', edit_celebrity_path(celebrity) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Celebrity', new_celebrity_path %>
