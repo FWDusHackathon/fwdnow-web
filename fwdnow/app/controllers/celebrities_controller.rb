@@ -1,5 +1,5 @@
 class CelebritiesController < ApplicationController
-  before_action :set_celebrity, only: [:show, :edit, :update, :destroy]
+  before_action :set_celebrity, only: [:show, :edit, :update]
 
   # GET /celebrities
   # GET /celebrities.json
@@ -10,6 +10,7 @@ class CelebritiesController < ApplicationController
   # GET /celebrities/1
   # GET /celebrities/1.json
   def show
+    @celebrity = Celebrity.find_by_name(params[:id])
   end
 
   # GET /celebrities/new
@@ -51,20 +52,10 @@ class CelebritiesController < ApplicationController
     end
   end
 
-  # DELETE /celebrities/1
-  # DELETE /celebrities/1.json
-  def destroy
-    @celebrity.destroy
-    respond_to do |format|
-      format.html { redirect_to celebrities_url }
-      format.json { head :no_content }
-    end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_celebrity
-      @celebrity = Celebrity.find(params[:id])
+        @celebrity = Celebrity.find_by_name(params[:name])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
