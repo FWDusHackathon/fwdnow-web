@@ -1,6 +1,7 @@
 <html>
   <body>
     <div id="fb-root"></div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script>
       // loading FB, Twitter code
       // fb
@@ -37,6 +38,39 @@
           <input type="submit" value="Call Me!" />
   </form>
 
+  <div>
+    Postcards
+    <button id="send_postcard">Send Postcard to Congress</button>
+  </div>
 
+  <script>
+    // TODO on button call
+    $('#send_postcard').click(function(e) {
+      e.preventDefault();
+      $.ajax('/api/send_postcard', {
+        type: "POST",
+        data: {
+          message: "Support Immigration reform yo!",
+          frontPhotoUrl: "http://alexeymk.com/images/alexey.jpg", // TODO get photo
+          recipients: [{ // TODO find congreesman (sunlight?)
+            name: "Congressman bob",
+            email: "Congressman's email, but maybe optional",
+            company: "US Congress",
+            street1: "TODO get address",
+            street2: "yup",
+            city: "Washington DC",
+            state: "DC",
+            postalcode: "TODO",
+            country: "USA"
+          }],
+          sender: {
+            email: "alexey@alexeymk.com" // TODO - probably use us
+          }
+      }}).always(function(response, status) {
+        console.log(response, status);
+      });
+
+    });
+  </script>
   </body>
 </html>
