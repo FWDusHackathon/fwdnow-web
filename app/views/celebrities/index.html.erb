@@ -10,7 +10,25 @@
             minWidth: 800,
             minHeight: 410
           });
+
+  $('#send_postcard').click(function(e) {
+    alert("Thank you for supporting immigration reform! Find out more at fwd.us");
+    window.location = "http://fwd.us";
+  });
+
+    /*
+      $.ajax('/api/send_postcard', {
+        type: "POST",
+        headers: {'X-CSRF-Token': '<%= form_authenticity_token.to_s %>'},
+        data: {
+          message: "Support Immigration reform yo!",
+          photo_url: "http://alexeymk.com/images/alexey.jpg", // TODO get photo
+          zipcode: 42410 // TODO forreal
+      }}).always(function(response, status) {
+        console.log(response, status);
       });
+    */
+  });
 </script>
 
 
@@ -185,7 +203,7 @@
       <input type="text" id="name" name="name" class="input_big" value="Name">
       <input type="text" id="zipcode" name="zipcode" class="input_sml" value="Zipcode">
       <input type="text" id="email" name="email" class="input_big" value="Email">
-      <a id="postcard-send" class="button button_blue input_btn">Send</a>
+      <a id="send_postcard" class="button button_blue input_btn">Send</a>
     </div>
   </div>
 </div>
