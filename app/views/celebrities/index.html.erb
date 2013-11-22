@@ -22,11 +22,9 @@
           <div id="featured-info-left">
             <div id="featured-quote">"#FWDnow to support immigration reform with me"</div>
 
-            <a class="fancybox" href="#amktest">
-              <div id="button">
-                <span><img src="img/btnFWD.png"></img></span>
-                <span id="button-text">FWD now with <span class="blue-medium">Ashton</span></span>
-              </div>
+            <a id="button" class="fancybox button button_blue" href="#postcard">
+              <span><img src="img/btnFWD.png"></img></span>
+              <span class="white-text">FWD now with <span class="blue-medium">Ashton</span></span>
             </a>
 
             <div id="featured-stat"><spam class="blue-big">57,891</spam>people have forwarded with Ashton</div>
@@ -175,7 +173,11 @@
 
   <script>
     $(document).ready(function() {
-      $(".fancybox").fancybox();
+      $(".fancybox").fancybox({
+        autoSize: true,
+        minWidth: 800,
+        minHeight: 410
+      });
     });
     function popupwindow(url, w, h) {
       var left = (screen.width/2)-(w/2);
@@ -234,4 +236,29 @@
       });
     });
   </script>
-  <div id="amktest">HEllo World</div>
+  <!-- hidden at start -->
+<div id="postcard" style="width:800px; height:410px;">
+  <div class="postcard_container">
+    <span class="thankyou">Thank you!</span>
+    <span class="thankyou_sub">You + Kanye + 237,874 people have Forwarded so far.</span>
+    <span><img src="img/heatmap.png" width="345px" /></span>
+  </div>
+  <div class="postcard_container">
+    <div class="description">Be a power supporter like Kanye, and do one of the following.</div>
+    <div class="support">
+      <span class="support_title">Call your congressman</span>
+      <span class="support_sub">Enter your zipcode and phone number and will connect you with representitive in your area</span>
+      <input type="text" id="phone" name="phone" class="input_big" value="Phone Number">
+      <input type="text" id="zipcode" name="zipcode" class="input_sml" value="Zipcode">
+      <a class="button button_blue input_btn">Call</a>
+    </div>
+    <div class="support">
+      <span class="support_title">Send free postcard</span>
+      <span class="support_sub">Enter your name, email and zipcode will send a postcard to your representitive showing your support</span>
+      <input type="text" id="name" name="name" class="input_big" value="Name">
+      <input type="text" id="zipcode" name="zipcode" class="input_sml" value="Zipcode">
+      <input type="text" id="email" name="email" class="input_big" value="Email">
+      <a class="button button_blue input_btn">Send</a>
+    </div>
+  </div>
+</div>
