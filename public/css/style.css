@@ -373,3 +373,16 @@ a.button_black:hover {
 	background: rgba(120, 120, 120, .75);
 	color: #fff;
 }
+
+#notice{
+	background-color: #38a0f4;
+	color: #fff;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	text-align: center;
+	display: block;
+	text-decoration: none;
+	cursor: pointer;
+}
