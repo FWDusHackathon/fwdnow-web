@@ -10,7 +10,7 @@ class CelebritiesController < ApplicationController
   # GET /celebrities/1
   # GET /celebrities/1.json
   def show
-    @celebrity = Celebrity.find_by_name(params[:id])
+    # @celebrity = Celebrity.find_by_name(params[:id])
   end
 
   # GET /celebrities/new
