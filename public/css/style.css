@@ -338,4 +338,38 @@ body{
 	margin-bottom: 15px;
 }
 
-.button_blue
+/*button basic*/
+
+.button {
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.button span {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.button_blue {
+	background: rgba(56, 160, 244, .75);
+	color: #fff;
+}
+
+a.button_blue:hover {
+	background: rgba(100, 200, 255, .75);
+	color: #fff;
+}
+
+.button_black {
+	background: rgba(0, 0, 0, .75);
+	color: #fff;
+}
+
+a.button_black:hover {
+	background: rgba(120, 120, 120, .75);
+	color: #fff;
+}
