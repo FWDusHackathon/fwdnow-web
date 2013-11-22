@@ -1,8 +1,15 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+
+<!-- fancybox, for modals -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.js"></script>
+<link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.css" />
+
+
 <div class="container">
       <div class="row">
         <div class="col-md-3" id="logo"><img src="img/FWDnowLogo.png"></div>
     <div class="col-md-6" id="title">We are all in for immigration reform, so let's all move forward <span class="blue">now</span></div>
-        <div class="col-md-3" id="count"><span class="blue">234,334</span> forwards so far</div>    
+        <div class="col-md-3" id="count"><span class="blue">234,334</span> forwards so far</div>
        </div>
      </div>
 
@@ -14,7 +21,7 @@
 
           <div id="featured-info-left">
             <div id="featured-quote">"#FWDnow to support immigration reform with me"</div>
-            
+
             <div id="button">
               <span><img src="img/btnFWD.png"></img></span>
               <span id="button-text">FWD now with <span class="blue-medium">Ashton</span></span>
@@ -142,11 +149,10 @@
     </div>
   </div>
 
-  
+
 
 
 <div id="fb-root"></div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <div class="fb-share-button" data-href="http://fwdnow.com" data-width="100" data-type="button"></div>
 
   Call congress:
@@ -166,6 +172,9 @@
   </div>
 
   <script>
+    $(document).ready(function() {
+      $(".fancybox").fancybox();
+    });
     function popupwindow(url, w, h) {
       var left = (screen.width/2)-(w/2);
       var top = (screen.height/2)-(h/2);
