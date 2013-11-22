@@ -3,6 +3,15 @@
 <!-- fancybox, for modals -->
 <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.js"></script>
 <link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.css" />
+<script>
+    $(document).ready(function() {
+        $(".fancybox").fancybox({
+            autoSize: true,
+            minWidth: 800,
+            minHeight: 410
+          });
+      });
+</script>
 
 
 <div class="container">
@@ -150,92 +159,15 @@
   </div>
 
 
-
-
-<div id="fb-root"></div>
-  <div class="fb-share-button" data-href="http://fwdnow.com" data-width="100" data-type="button"></div>
-
-  Call congress:
-
-  <div>
-    Postcards
-    <button id="send_postcard">Send Postcard to Congress</button>
-  </div>
-
-  <script>
-    $(document).ready(function() {
-      $(".fancybox").fancybox({
-        autoSize: true,
-        minWidth: 800,
-        minHeight: 410
-      });
-    });
-    function popupwindow(url, w, h) {
-      var left = (screen.width/2)-(w/2);
-      var top = (screen.height/2)-(h/2);
-      return window.open(url, "", 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
-    }
-    $('#facebook-share-button').click(function(e) {
-      e.preventDefault();
-      popupwindow("https://www.facebook.com/sharer/sharer.php?" + $.param({
-        u: "http://fwdnow.us"
-      }), 600, 300);
-    });
-    $('#twitter-share-button').click(function(e) {
-      e.preventDefault();
-      var rep = JSON.parse(localStorage.getItem('congressman'));
-      popupwindow("https://twitter.com/share?" + $.param({
-        url: "http://fwdnow.com",
-        related: "fwd_us",
-        text: "I am moving #fwdnow with @shakira to support immigration reform. Join us" +
-          (rep ? " Rep. @" + rep.twitter_id : "")
-      }), 600, 300);
-    });
-    $('input#zipcode').change(function(e) {
-      var zipcode = $('input#zipcode').val();
-      if (zipcode.length < 5) {
-        localStorage.removeItem('congressman');
-      }
-      if (zipcode.length == 5) {
-        $.getJSON("https://congress.api.sunlightfoundation.com/legislators/locate", {
-          zip: zipcode,
-          apikey: "afab65a2fbb74ec5b72ea09d9ebfd938"
-        }, function(response) {
-          var house_reps = response.results.filter(function(rep) {
-            return rep.chamber === "house";
-          });
-          // we'll have more than one rep if zip code is ambiguous,
-          // just pick first one
-          if (house_reps.length > 0) {
-            var our_rep = house_reps[0];
-            localStorage.setItem('congressman', JSON.stringify(our_rep));
-          }
-        });
-      }
-    });
-    $('#send_postcard').click(function(e) {
-      e.preventDefault();
-      $.ajax('/api/send_postcard', {
-        type: "POST",
-        headers: {'X-CSRF-Token': '<%= form_authenticity_token.to_s %>'},
-        data: {
-          message: "Support Immigration reform yo!",
-          photo_url: "http://alexeymk.com/images/alexey.jpg", // TODO get photo
-          zipcode: 42410 // TODO forreal
-      }}).always(function(response, status) {
-        console.log(response, status);
-      });
-    });
-  </script>
   <!-- hidden at start -->
 <div id="postcard" style="width:800px; height:410px;">
   <div class="postcard_container">
     <span class="thankyou">Thank you!</span>
-    <span class="thankyou_sub">You + Kanye + 237,874 people have Forwarded so far.</span>
+    <span class="thankyou_sub">You + Ashton + 237,874 people have Forwarded so far.</span>
     <span><img src="img/heatmap.png" width="345px" /></span>
   </div>
   <div class="postcard_container">
-    <div class="description">Be a power supporter like Kanye, and do one of the following.</div>
+    <div class="description">Be a power supporter like Ashton, and do one of the following.</div>
     <div class="support">
     <form action="https://secure.mcommons.com/profiles/join" method="post">
       <input type="hidden" name="redirect_to" value="http://www.fwd.us/call_thank_you" />
@@ -253,7 +185,18 @@
       <input type="text" id="name" name="name" class="input_big" value="Name">
       <input type="text" id="zipcode" name="zipcode" class="input_sml" value="Zipcode">
       <input type="text" id="email" name="email" class="input_big" value="Email">
-      <a class="button button_blue input_btn">Send</a>
+      <a id="postcard-send" class="button button_blue input_btn">Send</a>
     </div>
   </div>
 </div>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-45960431-1', 'fwdnow.us');
+              ga('send', 'pageview');
+
+  </script>
+
