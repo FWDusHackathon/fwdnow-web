@@ -156,15 +156,6 @@
   <div class="fb-share-button" data-href="http://fwdnow.com" data-width="100" data-type="button"></div>
 
   Call congress:
-  <form action="https://secure.mcommons.com/profiles/join" method="post">
-    <input type="hidden" name="redirect_to" value="http://www.fwd.us/call_thank_you" />
-    <input id="zipcode" type="text" class="text" name="person[postal_code]" placeholder="Zip Code" value="">
-    <input type="hidden" name="mconnect" value="VO5368E793DE4ECCFA7910A7CC1D47A6FF" />
-          (FWD.us House Targets (TA))
-          <label>Phone Number:</label>
-          <input type="text" name="person[phone]" />
-          <input type="submit" value="Call Me!" />
-  </form>
 
   <div>
     Postcards
@@ -246,11 +237,15 @@
   <div class="postcard_container">
     <div class="description">Be a power supporter like Kanye, and do one of the following.</div>
     <div class="support">
+    <form action="https://secure.mcommons.com/profiles/join" method="post">
+      <input type="hidden" name="redirect_to" value="http://www.fwd.us/call_thank_you" />
+      <input type="hidden" name="mconnect" value="VO5368E793DE4ECCFA7910A7CC1D47A6FF" />
       <span class="support_title">Call your congressman</span>
       <span class="support_sub">Enter your zipcode and phone number and will connect you with representitive in your area</span>
-      <input type="text" id="phone" name="phone" class="input_big" value="Phone Number">
-      <input type="text" id="zipcode" name="zipcode" class="input_sml" value="Zipcode">
-      <a class="button button_blue input_btn">Call</a>
+        <input type="text" id="phone" name="person[phone]" class="input_big" value="Phone Number">
+        <input type="text" id="zipcode" name="person[postal_code]" class="input_sml" value="Zipcode">
+        <input type="submit" class="button button_blue input_btn" value="Call"/>
+      </form>
     </div>
     <div class="support">
       <span class="support_title">Send free postcard</span>

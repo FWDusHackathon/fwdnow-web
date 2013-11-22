@@ -355,7 +355,7 @@ body{
 }
 
 .button_blue {
-	background: rgba(56, 160, 244, .75);
+	background: rgba(56, 160, 244, .75) !important;
 	color: #fff;
 }
 
