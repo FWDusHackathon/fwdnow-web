@@ -173,7 +173,7 @@ body{
 	height: 45px;
 	padding: 10px 15px;
 	min-width: 165px;
-	background-color: gray;
+	background-color: #525657;
 }
 
 #button-text{
@@ -351,7 +351,7 @@ body{
 
 .button span {
 	display: inline-block;
-	vertical-align: top;
+	vertical-align: middle;
 }
 
 .button_blue {
@@ -360,8 +360,8 @@ body{
 }
 
 a.button_blue:hover {
-	background: rgba(100, 200, 255, .75);
-	color: #fff;
+	/*background: rgba(100, 200, 255, .75);
+	color: #fff;*/
 }
 
 .button_black {
@@ -372,6 +372,10 @@ a.button_blue:hover {
 a.button_black:hover {
 	background: rgba(120, 120, 120, .75);
 	color: #fff;
+}
+
+a:hover, a:focus{
+	text-decoration: none;
 }
 
 #notice{
@@ -386,3 +390,131 @@ a.button_black:hover {
 	text-decoration: none;
 	cursor: pointer;
 }
+
+/*posting popup*/
+
+#posting {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	/*width: 220px;*/
+	padding: 10px;
+	/*background: rgba(0, 0, 0, .75);*/
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	text-align: center;
+	color: white;
+}
+
+#posting .description {
+	text-align: center;
+	display: inline-block;
+	margin-bottom: 25px;
+}
+
+#posting .btn_round {
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+	border: 2px solid #fff;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	margin: 4px;
+	line-height: 30px;	
+}
+
+#posting a.btn_round:hover {
+	background: rgba(120, 120, 120, .75);
+}
+
+#posting .btn_round_blue {
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+	border: 2px solid #fff;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	margin: 4px;
+	background: rgba(56, 160, 244, .75);
+}
+
+#posting .submit {
+	font-size: 12px;
+	height: 30px;
+	padding: 8px;
+	text-align: center;
+	width: 190px;
+	margin-top: 12px;
+}
+
+/* Posting popup*/
+.fancybox-opened .fancybox-skin{
+	background: rgba(0, 0, 0, .75);
+
+}
+
+#posting img{
+	height: 30px;
+}
+
+#btn-facebook{
+	background-color: #38a0f4;
+	height: 65px;
+	min-width: 200px;
+}
+
+#btn-twitter{
+	background-color: #38a0f4;
+	height: 65px;
+	min-width: 200px;
+}
+
+/* Button social media*/
+.posting-btn{
+	width: 230px;
+	height: 35px;
+	padding-left: 35px;
+	vertical-align: middle;
+	text-align: left;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.posting-btn img{
+	vertical-align: bottom;
+}
+
+#fb-btn{
+	background-color: #3b5998;
+}
+
+#tw-btn{
+	background-color: #38a0f4;
+}
+
+.btn-desc{
+	line-height: 35px;
+	vertical-align: middle;
+}
+
+/*#posting #btn{
+	min-width: 165px;
+}
+
+#posting #btn-twitter{
+	background-color: #38a0f4;
+}
+#posting #btn-facebook{
+	background-color: #38a0f4;
+}
+
+#posting img{
+	height: 50px;
+}
+*/

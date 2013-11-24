@@ -7,8 +7,17 @@
     $(document).ready(function() {
         $(".fancybox").fancybox({
             autoSize: true,
-            minWidth: 800,
-            minHeight: 410
+            minWidth: 250,
+            minHeight: 160,
+            padding: 15,
+            scrolling: 20,
+             helpers : {
+              overlay : {
+                css : {
+                  'background' : 'rgba(0, 0, 0, 0.15)'
+                } 
+              }
+            }
           });
 
   $('#send_postcard').click(function(e) {
@@ -50,9 +59,9 @@
           <div id="featured-info-left">
             <div id="featured-quote">"#FWDnow to support immigration reform with me"</div>
 
-            <a id="button" class="fancybox button button_blue" href="#postcard">
+            <a id="button" class="fancybox button" href="#posting">
               <span><img src="img/btnFWD.png"></img></span>
-              <span class="white-text">FWD now with <span class="blue-medium">Ashton</span></span>
+              <span class="white-text">FWD now with&nbsp</span><span class="blue">Ashton</span>
             </a>
 
             <div id="featured-stat"><spam class="blue-big">57,891</spam>people have forwarded with Ashton</div>
@@ -178,7 +187,22 @@
   </div>
 
 
-  <!-- hidden at start -->
+<!-- hidden at start - posting -->
+  <div id="posting">
+  <span class="description">I #FWDnow with Ashton to support immigration reform</span>
+  
+<a id="fb-btn" class="posting-btn popup" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2FFWDnow.us%2FAshton">
+  <img src="img/btnFB.png"></img>
+  <span class="white-text btn-desc">Share on Facebook</span></span>
+</a>
+
+<a id="tw-btn" class="posting-btn popup" href="https://twitter.com/intent/tweet?text=I%20%23FWDnow%20with%20Ashton%20(%40aplusk)%20to%20support%20immigration%20reform%3A&tw_p=tweetbutton&url=http%3A%2F%2FFWDnow.us%2FAshton">
+  <img src="img/btnTwitter.png"></img>
+  <span class="white-text btn-desc">Share on Twitter</span></span>
+</a>
+</div>
+
+<!-- hidden at start -->
 <div id="postcard" style="width:800px; height:410px;">
   <div class="postcard_container">
     <span class="thankyou">Thank you!</span>
@@ -219,3 +243,35 @@
 
   </script>
 
+<script>
+  $('.popup').click(function(event) {
+    var width  = 575,
+        height = 260,
+        left   = ($(window).width()  - width)  / 2,
+        top    = ($(window).height() - height) / 2,
+        url    = this.href,
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left;
+    
+    window.open(url, 'twitter', opts);
+ 
+    return false;
+  });
+</script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+ <!--<script>
+   // twitter
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>-->
