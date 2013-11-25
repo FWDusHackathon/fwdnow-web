@@ -246,8 +246,8 @@
       <input type="hidden" name="mconnect" value="VO5368E793DE4ECCFA7910A7CC1D47A6FF" />
       <span class="support_title">Call your congressman</span>
       <span class="support_sub">Enter your information and we'll connect you to your representative:</span>
-        <input type="text" id="phone" name="person[phone]" class="input_big" value="Phone Number">
-        <input type="text" id="zipcode" name="person[postal_code]" class="input_sml" value="Zipcode">
+        <input type="text" onfocus="if(this.value == 'Phone Number') { this.value = ''; }" id="phone" name="person[phone]" class="input_big" value="Phone Number">
+        <input type="text" onfocus="if(this.value == 'Zipcode') { this.value = ''; }" id="zipcode" name="person[postal_code]" class="input_sml" value="Zipcode">
         <input type="submit" class="button button_blue input_btn" value="Call"/>
       </form>
     </div>
@@ -255,9 +255,9 @@
     <div class="support">
       <span class="support_title">Send free postcard</span>
       <span class="support_sub">Enter your information and we'll send a postcard to your representative on your behalf:</span>
-      <input type="text" id="name" name="name" class="input_big" value="Name">
-      <input type="text" id="zipcode" name="zipcode" class="input_sml" value="Zipcode">
-      <input type="text" id="email" name="email" class="input_big" value="Email">
+      <input type="text" onfocus="if(this.value == 'Name') { this.value = ''; }" id="name" name="name" class="input_big" value="Name">
+      <input type="text" onfocus="if(this.value == 'Zipcode') { this.value = ''; }" id="zipcode" name="zipcode" class="input_sml" value="Zipcode">
+      <input type="text" onfocus="if(this.value == 'Email') { this.value = ''; }" id="email" name="email" class="input_big" value="Email">
       <a id="send_postcard" class="button button_blue input_btn">Send</a>
     </div>
   </div>
