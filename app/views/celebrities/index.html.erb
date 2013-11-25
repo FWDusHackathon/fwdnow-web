@@ -5,16 +5,49 @@
 <link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.css" />
 <script>
     $(document).ready(function() {
-        $(".fancybox").fancybox({
+        $(".stepone").fancybox({
+            afterClose: function(){
+              $.fancybox.open([
+                  {
+                    href: '#postcard'
+                  }
+                ], {
+                    openEffect: 'none',
+                    autoSize: true,
+                    minWidth: 800,
+                    minHeight: 380,
+                    padding: 15,
+                    scrolling: 20,
+                    helpers : {
+                    overlay : {
+                    css : {
+                      'background' : 'rgba(0, 0, 0, 0.15)'
+                      } 
+                    }
+                  }
+                });
+                return false;
+            },
+            // openEffect: 'none',
+            closeEffect: 'none',
             autoSize: true,
-            minWidth: 800,
-            minHeight: 410
+            minWidth: 250,
+            minHeight: 160,
+            padding: 15,
+            scrolling: 20,
+            helpers : {
+              overlay : {
+                css : {
+                  'background' : 'rgba(0, 0, 0, 0.15)'
+                } 
+              }
+            }
           });
 
-  $('#send_postcard').click(function(e) {
-    alert("Thank you for supporting immigration reform! Find out more at fwd.us");
-    window.location = "http://fwd.us";
-  });
+    $('#send_postcard').click(function(e) {
+        alert("Thank you for supporting immigration reform! Find out more at fwd.us");
+        window.location = "http://fwd.us";
+    });
 
     /*
       $.ajax('/api/send_postcard', {
@@ -37,7 +70,7 @@
   <div class="row">
         <div class="col-md-3" id="logo"><img src="img/FWDnowLogo.png"></div>
     <div class="col-md-6" id="title">We are all for immigration reform, so let's move forward <span class="blue">now</span></div>
-        <div class="col-md-3" id="count"><span class="blue">234,334</span> forwards so far</div>
+        <div class="col-md-3" id="count"><span class="blue">279,259</span> forwards so far</div>
        </div>
      </div>
 
@@ -48,11 +81,11 @@
           <img src="img/Ashton2x.jpg"></img>
 
           <div id="featured-info-left">
-            <div id="featured-quote">"#FWDnow to support immigration reform with me"</div>
+            <div id="featured-quote">"#FWDnow to support immigration reform with me" &#8212; Ashton Kutcher</div>
 
-            <a id="button" class="fancybox button button_blue" href="#postcard">
+            <a id="button" class="fancybox button stepone" href="#posting">
               <span><img src="img/btnFWD.png"></img></span>
-              <span class="white-text">FWD now with <span class="blue-medium">Ashton</span></span>
+              <span class="white-text">FWD now with&nbsp</span><span class="blue">Ashton</span&#8212; >
             </a>
 
             <div id="featured-stat"><spam class="blue-big">57,891</spam>people have forwarded with Ashton</div>
@@ -178,32 +211,53 @@
   </div>
 
 
-  <!-- hidden at start -->
+<!-- hidden at start - posting -->
+  <div id="posting">
+  <span class="description">I #FWDnow with Ashton to support immigration reform</span>
+
+<a id="fb-btn" class="posting-btn popup" href="http://www.facebook.com/sharer.php?
+    s=100
+    &p[url]=http://FWDnow.us/Ashton
+    &p[images][0]=http://fwdnow.us/img/Ashton2x.jpg
+    &p[title]=I%20%23FWDnow%20with%20Ashton%20to%20Support%20Immigration%20Reform
+    &p[summary]=The%20time%20is%20now!%20%23ready4reform">
+<img src="img/btnFB.png"></img>
+  <span class="white-text btn-desc">Share on Facebook</span></span>
+</a> 
+
+<a id="tw-btn" class="posting-btn popup" href="https://twitter.com/intent/tweet?text=I%20%23FWDnow%20with%20Ashton%20(%40aplusk)%20to%20support%20immigration%20reform%3A&tw_p=tweetbutton&url=http%3A%2F%2FFWDnow.us%2FAshton">
+  <img src="img/btnTwitter.png"></img>
+  <span class="white-text btn-desc">Share on Twitter</span></span>
+</a>
+</div>
+
+<!-- hidden at start -->
 <div id="postcard" style="width:800px; height:410px;">
   <div class="postcard_container">
     <span class="thankyou">Thank you!</span>
-    <span class="thankyou_sub">You + Ashton + 237,874 people have Forwarded so far.</span>
+    <span class="thankyou_sub">You + Ashton + 57,891 people have forwarded so far.</span>
     <span><img src="img/heatmap.png" width="345px" /></span>
   </div>
   <div class="postcard_container">
-    <div class="description">Be a power supporter like Ashton, and do one of the following.</div>
+    <div class="description">Be an active supporter and urge your congressional leaders to take action on immigration reform:</div>
     <div class="support">
     <form action="https://secure.mcommons.com/profiles/join" method="post">
       <input type="hidden" name="redirect_to" value="http://www.fwd.us/call_thank_you" />
       <input type="hidden" name="mconnect" value="VO5368E793DE4ECCFA7910A7CC1D47A6FF" />
       <span class="support_title">Call your congressman</span>
-      <span class="support_sub">Enter your zipcode and phone number and will connect you with representitive in your area</span>
-        <input type="text" id="phone" name="person[phone]" class="input_big" value="Phone Number">
-        <input type="text" id="zipcode" name="person[postal_code]" class="input_sml" value="Zipcode">
+      <span class="support_sub">Enter your information and we'll connect you to your representative:</span>
+        <input type="text" onfocus="if(this.value == 'Phone Number') { this.value = ''; }" id="phone" name="person[phone]" class="input_big" value="Phone Number">
+        <input type="text" onfocus="if(this.value == 'Zipcode') { this.value = ''; }" id="zipcode" name="person[postal_code]" class="input_sml" value="Zipcode">
         <input type="submit" class="button button_blue input_btn" value="Call"/>
       </form>
     </div>
+    
     <div class="support">
       <span class="support_title">Send free postcard</span>
-      <span class="support_sub">Enter your name, email and zipcode will send a postcard to your representitive showing your support</span>
-      <input type="text" id="name" name="name" class="input_big" value="Name">
-      <input type="text" id="zipcode" name="zipcode" class="input_sml" value="Zipcode">
-      <input type="text" id="email" name="email" class="input_big" value="Email">
+      <span class="support_sub">Enter your information and we'll send a postcard to your representative on your behalf:</span>
+      <input type="text" onfocus="if(this.value == 'Name') { this.value = ''; }" id="name" name="name" class="input_big" value="Name">
+      <input type="text" onfocus="if(this.value == 'Zipcode') { this.value = ''; }" id="zipcode" name="zipcode" class="input_sml" value="Zipcode">
+      <input type="text" onfocus="if(this.value == 'Email') { this.value = ''; }" id="email" name="email" class="input_big" value="Email">
       <a id="send_postcard" class="button button_blue input_btn">Send</a>
     </div>
   </div>
@@ -219,3 +273,35 @@
 
   </script>
 
+<script>
+  $('.popup').click(function(event) {
+    var width  = 575,
+        height = 260,
+        left   = ($(window).width()  - width)  / 2,
+        top    = ($(window).height() - height) / 2,
+        url    = this.href,
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left;
+    
+    window.open(url, 'twitter', opts);
+ 
+    return false;
+  });
+</script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+ <!--<script>
+   // twitter
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>-->

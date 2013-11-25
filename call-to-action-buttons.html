@@ -1,4 +1,113 @@
+<!DOCTYPE html>
 <html>
+<head>
+
+           <!--  <link rel="stylesheet" href="http://fwd.nationbuilder.com/themes/1/526688698ed5f0184c000002/0/attachments/13824772621385157922/default/responsive.css" type="text/css" />
+ -->
+
+ <div class="support">
+      <span class="support_title">Tweet your congressman</span>
+      <span class="support_sub">Enter your information and we'll look up your representative:</span>
+      <div id="form-address">
+          <input type="text" id="input-address" name="input-address" class="input_big" value="Address">
+      </div>
+      <div id="form-zip">
+          <input type="text" id="input-zip" name="input-zip" maxlength="5" class="input_sml" value="Zipcode">
+      </div>
+      <textarea name="input-tweet" maxlength="140"></textarea>
+
+      <input type="submit" value="Submit" class="big blue-dark" /> 
+      <a id="tweet-composer" class="button button_blue input_btn popup" href="https://twitter.com/intent/tweet?text=">Tweet</a>
+       
+    </div>
+
+    
+            <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="wgTJDP+XuUrkHwMhSDrHD6FYJ0y+R7JuVTJD78321FU=" name="csrf-token" />
+
+  <link rel="canonical" href="http://www.fwd.us/tweet" />
+    <meta name="Title" content="Tweet @ Your Representative">
+    <meta name="Description" content="Use this new online tool from FWD.us to tweet your support for immigration reform @ your representative in Washington, D.C.">
+    <meta property="og:title" content="Tweet @ Your Representative"/>
+  <meta property="og:url" content="http://www.fwd.us/tweet">
+    <meta property="og:description" content="Use this new online tool from FWD.us to tweet your support for immigration reform @ your representative in Washington, D.C.">
+    <meta property="og:type" content="article">
+      <link rel="image_src" href="http://d3n8a8pro7vhmx.cloudfront.net/fwd/pages/285/meta_images/original/Facebook_OG_500.jpg?1376339210" />
+      <meta property="og:image" content="http://d3n8a8pro7vhmx.cloudfront.net/fwd/pages/285/meta_images/original/Facebook_OG_500.jpg?1376339210" />
+  <meta property="og:site_name" content="FWD.us"/>
+
+<script type="text/javascript">
+  window.NB = {};
+  window.NB.environment = "production";
+  window.NB.pageId = "285";
+
+</script>
+
+<script type="text/javascript">
+    //<![CDATA[
+      window._auth_token_name = "authenticity_token";
+      window._auth_token = "wgTJDP+XuUrkHwMhSDrHD6FYJ0y+R7JuVTJD78321FU=";
+    //]]>
+</script>
+
+ <!--  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/themes/cupertino/jquery-ui.css" type="text/css" media="all">
+ -->
+
+<!--[if lt IE 7.]>
+<script type="text/javascript" src="/javascripts/jquery.supersleight.js"></script>
+<![endif]-->
+
+<script src="//d3n8a8pro7vhmx.cloudfront.net/assets/liquid_basic-fc692502cf3883bf430a89b03f7c5ce1.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  window.twttr = (function (d,s,id) {
+    var t, js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+    js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+    return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+  }(document, "script", "twitter-wjs"));
+</script>
+
+<script type="text/javascript">
+  //Facebook App ID
+  NB.FBAppId = '126739610711965';
+</script>
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '//apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+
+
+<!-- Quantcast Tag, part 1 -->
+<script type="text/javascript">
+  var _qevents = _qevents || [];
+
+  (function() {
+   var elem = document.createElement('script');
+
+   elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+   elem.async = true;
+   elem.type = "text/javascript";
+   var scpt = document.getElementsByTagName('script')[0];
+   scpt.parentNode.insertBefore(elem, scpt);
+  })();
+</script>
+
+<!-- Theme: Name - FWD 2.0; ID - 526688698ed5f0184c000002; - API Version - 1 -->
+
+
+            <!--<script src="http://fwd.nationbuilder.com/themes/1/526688698ed5f0184c000002/0/attachments/13824772621385157922/default/all.js"></script>
+            <script src="http://fwd.nationbuilder.com/themes/1/526688698ed5f0184c000002/0/attachments/13824772621385157922/default/main.js"></script>-->
+        
+
+</head>
+
+
   <body>
     <div id="fb-root"></div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -42,6 +151,92 @@
     Postcards
     <button id="send_postcard">Send Postcard to Congress</button>
   </div>
+
+<br>
+
+
+<script>
+        var congress_tweet = "I'm #Ready4Reform that strengthens our economy! Please act now on #immigration reform. @FWD_us #CIR";
+        var fallback_tweet = "The time is now for #immigration reform. Join the movement to help pass reform: http://bit.ly/11qzP77 @FWD_us";
+        var daisychain_url = "http://fwd.us/tweet_th";
+    </script>
+
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="http://fwd.nationbuilder.com/themes/1/526688698ed5f0184c000002/0/attachments/13824772621385157922/default/tweetCongress.js"></script>
+
+    <div class="js-personal-location"
+        
+        data-status="anon"
+        
+    ></div>
+
+
+
+<div class="form_wrap">
+        <form id="form-zip">
+            <div class="stepOne get-zip">
+                <label>Please enter your zip code:</label>
+                
+                    <input type="text" name="input-zip" maxlength="5" />
+                
+
+                <input type="submit" value="Submit" class="big blue-dark" />
+            </div>
+        </form>
+
+        <form id="form-address">
+            <div class="stepTwo get-street">
+                <p>Your zip code overlaps with two representatives, please add your street address so we can direct you to the right one. <br /></p>
+                <label>Please enter your street address</label>
+                <input type="text" name="input-address" />
+
+                <input type="submit" value="Submit" class="big blue-dark" />
+            </div>
+        </form>
+      
+              <div class="stepFour get-tweet">
+            <div class="meta">
+                <div class="left">
+                    <div class="avatar"></div>
+                </div>
+                <div class="left">
+                    <div class="top">
+                        <span class="name"></span>
+                        <span class="handle"></span>
+                    </div>
+                    <div class="bottom">
+                        <span class="profile"></span>
+                    </div>
+                </div>
+            </div>
+            <textarea name="input-tweet" maxlength="140"></textarea>
+
+            <a id="tweet-composer" class="button red" target="_blank" href="https://twitter.com/intent/tweet?text=">Tweet your Representative!</a>
+        </div>
+
+
+
+
+<p id="demo">Click the button to get your coordinates:</p>
+<button onclick="getLocation()">Try It</button>
+<script>
+var x=document.getElementById("demo");
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else{x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position)
+  {
+  x.innerHTML="Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;  
+  }
+</script>
+
+
 
   <script>
     $.ajaxSetup({
