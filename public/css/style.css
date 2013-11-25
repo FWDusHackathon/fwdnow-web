@@ -174,6 +174,10 @@ body{
 	padding: 10px 15px;
 	min-width: 165px;
 	background-color: #525657;
+	border:1px solid #;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 8px; 
 }
 
 #button-text{
@@ -246,8 +250,12 @@ body{
 	left: 0;
 	width: 800px;
 	height: 410px;
-	padding: 27px;
-	background: rgba(0, 0, 0, .75);
+	/*padding: 27px;*/
+	padding-left: 27px;
+	padding-top: 27px;
+	padding-bottom: 27px;
+	padding-right: 17px;
+	background: rgba(0, 0, 0, .15);
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
@@ -256,7 +264,8 @@ body{
 
 #postcard .postcard_container {
 	float: left;
-	width: 373px;
+	/*width: 373px;*/
+	width: 377px;
 }
 
 #postcard .thankyou {
@@ -277,15 +286,13 @@ body{
 	display: block;
 	margin-bottom: 12px;
 	font-size: 15px;
-	width: 345px;
+	/*width: 345px;*/
+	width: 100%;
 }
 
 #postcard .support {
-	width: 350px;
-}
-
-#postcard .support {
-	width: 350px;
+/*	width: 350px;*/
+	width: 100%;
 }
 
 #postcard .support .support_title {
@@ -485,6 +492,7 @@ a:hover, a:focus{
 	display: block;
 	margin-bottom: 10px;
 }
+
 
 .posting-btn img{
 	vertical-align: bottom;
