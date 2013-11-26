@@ -299,13 +299,14 @@ body{
 	font-size: 15px;
 	font-weight: normal;
 	display: block;
-	margin-bottom: 10px;
+	margin-bottom: 3px;
+	margin-top: 3px;
 }
 
 #postcard .support .support_sub {
 	font-size: 12px;
 	display: block;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 #postcard .support input {
