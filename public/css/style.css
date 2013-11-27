@@ -65,15 +65,6 @@ body{
 	margin-bottom: 30px;
 }
 
-.inside2{
-	height: 325px;
-	overflow: hidden;
-}
-
-.inside2 img{
-	width: 100%;
-}
-
 #featured-info-left{
 	padding-left: 50px;
 	width: 450px;
@@ -101,71 +92,6 @@ body{
 	position: relative;
 }
 
-#video-info img{
-	width: 100%;
-}
-
-
-#video-quote{
-	width: 298px;
-	position: absolute;
-	z-index: 2;
-	top: 20px;
-	left: 25px;
-}
-
-#video-quote-title{
-	font-size: 25px;
-	padding-bottom: 20px;
-	width: 100%;
-	display: block;
-}
-
-#video-quote-text{
-	font-size: 14px;
-	padding-bottom: 30px;
-	padding-right:110px;
-	display: block;
-}
-
-#video-quote-text-black{
-	font-size: 16px;
-	padding-top: 20px;
-	padding-bottom: 30px;
-	padding-right:110px;
-	display: block;
-	color: #2A0000;
-}
-
-#video-quote-signature{
-	font-size: 16px;
-	display: block;
-}
-
-#video-quote-signature-black{
-	padding-top: 10px;
-	font-size: 20px;
-	display: block;
-	color:#2A0000;
-	font-size: 14px;
-}
-
-#video-stat{
-	padding-bottom: 15px;
-	font-size: 14px;
-	position:absolute;
-	bottom:0;
-	left: 25px;
-}
-
-#video-stat-black{
-	padding-bottom: 15px;
-	font-size: 14px;
-	position:absolute;
-	bottom:0;
-	left: 25px;
-	color: black;
-}
 
 #button{
 	position: absolute;
@@ -210,12 +136,15 @@ body{
 	float: left;
 	padding-left: 30px;
 	padding-right: 10px;
-	//background-color: green;
 }
 
 .white-text {
   color: white;
 
+}
+
+.small-text{
+	font-size: 12px;
 }
 
 #featured-button-logo img{
@@ -485,7 +414,6 @@ a:hover, a:focus{
 /* Posting popup*/
 .fancybox-opened .fancybox-skin{
 	background: rgba(0, 0, 0, .75);
-
 }
 
 #posting img{
@@ -515,7 +443,6 @@ a:hover, a:focus{
 	margin-bottom: 10px;
 }
 
-
 .posting-btn img{
 	vertical-align: bottom;
 }
@@ -533,18 +460,76 @@ a:hover, a:focus{
 	vertical-align: middle;
 }
 
-/*#posting #btn{
-	min-width: 165px;
+/* celebrities post */
+
+.celebrity-info{
+	height: 320px;
+	overflow: hidden;
+	position: relative;
 }
 
-#posting #btn-twitter{
-	background-color: #38a0f4;
-}
-#posting #btn-facebook{
-	background-color: #38a0f4;
+.celebrity-info .quote{
+	width: 360px;
+	position: absolute;
+	z-index: 2;
+	top: 25px;
+	left: 25px;
+	font-size: 16px;
+	padding-bottom: 30px;
+	padding-right: 110px;
+	display: block;
 }
 
-#posting img{
-	height: 50px;
+.celebrity-info .title{
+	padding-bottom: 10px;
+	font-size: 20px;
+	display: block;
 }
-*/
+
+.celebrity-info .signature{
+	padding-top: 15px;
+	display: block;
+}
+
+.celebrity-info .black-text{
+	color: #2A0000;
+}
+
+.celebrity-info .alpha-text{
+	background: rgba(120, 120, 120, .55);
+}
+
+.celebrity-info .up{
+	margin-bottom: 0px;
+}
+
+.celebrity-info .stat{
+	padding-bottom: 15px;
+	font-size: 14px;
+	position:absolute;
+	bottom:0;
+	left: 25px;
+}
+
+.celebrity-info .celebrity-pic{
+	width: 100%;
+}
+
+.celebrity-info .fwd-btn{
+	width: 20px;
+}
+
+.celebrity-info .fwd-button{
+	position: absolute;
+	top: 175px;
+	height: 35px;
+	padding: 5px 15px;
+	min-width: 120px;
+	background-color: #525657;
+	border:1px solid #;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 8px; 
+	margin-left: 20px;
+	margin-top: 28px;
+}
