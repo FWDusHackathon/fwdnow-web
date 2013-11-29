@@ -3,6 +3,8 @@
 <!-- fancybox, for modals -->
 <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.js"></script>
 <link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.css" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
 <script type="text/javascript">
 
     function setInfo(id){
@@ -25,6 +27,17 @@
 </script>
 <script>
   $(document).ready(function() {
+
+    $(".video").fancybox({
+      maxWidth : 853,
+      maxHeight : 480,
+      openEffect  : 'none',
+      closeEffect : 'none',
+      helpers : {
+        media : {}
+      }
+    });
+
     $(".stepone").fancybox({
       afterClose: function(){
         stepTwo();
@@ -87,24 +100,23 @@
   });
 
   <%
-
     #this is not being used:
 
-    celebs = { :celeb => {
-        :id => "ashton", :attr => [
-          { :name => 'Ashton' },
-          { :twitter => 'aplusk' },
-          { :pic => 'http://fwdnow.us/img/Ashton2x.jpg' },
-          { :count => '57,891' }
-        ],
-        :id => "julianne", :attr => [
-          { :name => 'Julianne' },
-          { :twitter => 'julianne-twitter' },
-          { :pic => 'http://fwdnow.us/img/Julianne-Small.jpg' },
-          { :count => '31,421' }
-        ]
-      }
-    }
+    #celebs = { :celeb => {
+    #    :id => "ashton", :attr => [
+    #      { :name => 'Ashton' },
+    #      { :twitter => 'aplusk' },
+    #      { :pic => 'http://fwdnow.us/img/Ashton2x.jpg' },
+    #      { :count => '57,891' }
+    #    ],
+    #    :id => "julianne", :attr => [
+    #      { :name => 'Julianne' },
+    #      { :twitter => 'julianne-twitter' },
+    #      { :pic => 'http://fwdnow.us/img/Julianne-Small.jpg' },
+    #      { :count => '31,421' }
+    #    ]
+    #  }
+    #}
   %>
 
 </script>
@@ -151,11 +163,10 @@
             <span class="black-text">"Immigration reform will put 11 million  people living in the United States on pathway to citizenship" <span class="signature">&#8212; Julianne Moore</span></span>
           </div>
           
-          <a class="stepone fwd-button" href="#posting">
+          <!-- <a class="stepone fwd-button" href="#posting">
             <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
             <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Julianne</span></span>
-          </a>
-          </button>
+          </a> -->
 
           <div class="stat"><spam class="black-text"><spam class="blue-medium">31,421 </spam>people have forwarded with Julianne</spam>
           </div>
@@ -172,10 +183,14 @@
             <span class="white-text">Taboo's new song opposing Arizona's Bill 1070 against undocumented immigrants</span>
           </div>
           
-          <a class="stepone fwd-button" href="#posting">
+          <a class="video fancybox.iframe" href="http://www.youtube.com/embed/xaCxTO3Z3vk?fs=1&autoplay=1">
+            <span><img class="play-btn" src="img/btnPlay.png"></img></span>
+          </a>
+
+          <!-- <a class="stepone fwd-button" href="#posting">
             <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
             <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Taboo</span></span>
-          </a>
+          </a> -->
           
           <div class="stat"><spam class="white-text"><spam class="blue-medium">41,292 </spam>people have forwarded with Taboo</spam></div>
         </div>
@@ -194,11 +209,15 @@
             <span class="title">"Wake me up"</span>
             <span class="white-text">Aloe Blacc's new song supporting immigration reform by showing stories never told from undocumented immigrants</span>
           </div>
-          
-          <a class="stepone fwd-button" href="#posting">
+
+          <a class="video fancybox.iframe" href="http://www.youtube.com/embed/M_o6axAseak?fs=1&autoplay=1">
+            <span><img class="play-btn" src="img/btnPlay.png"></img></span>
+          </a>
+
+          <!-- <a class="stepone fwd-button" href="#posting">
             <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
             <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Aloe</span></span>
-          </a>
+          </a> -->
           
           <div class="stat"><spam class="white-text"><spam class="blue-medium">29,542 </spam>people have forwarded with Aloe</spam>
           </div>
@@ -214,10 +233,10 @@
             <span class="black-text">Sarah Silverman signed a letter to President Obama and members of Congress urging them to pass a<br>bill that provides a 'clear<br>road map to citizenship' for<br>the nation's 11 million<br>unauthorized immigrants</span>
           </div>
           
-          <a class="stepone fwd-button" href="#posting">
+          <!-- <a class="stepone fwd-button" href="#posting">
             <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
             <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Sarah</span></span>
-          </a>
+          </a> -->
           
           <div class="stat"><spam class="black-text"><spam class="blue-medium">31,421 </spam>people have forwarded with Sarah</spam></div>
         </div>
@@ -235,10 +254,10 @@
             <span class="white-text">"It's possible to both enforce our laws and, at the same time, embrace the words on the Statue of Liberty that have welcomed generations of huddled masses to our shores" &#8212; Oprah Winfrey</span>
           </div>
           
-          <a class="stepone fwd-button" href="#posting">
+          <!-- <a class="stepone fwd-button" href="#posting">
             <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
             <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Oprah</span></span>
-          </a>
+          </a> -->
           
           <div class="stat"><spam class="white-text"><spam class="blue-medium">59,271 </spam>people have forwa<span class="alpha-text">rded with Oprah</spam>
           </div>
@@ -253,10 +272,10 @@
             <span class="white-text alpha-text">Eleven million undocumented people "deserve a chance to live their dream and we will all win<br>if they do" &#8212; Sergio Romo</span>
           </div>
           
-          <a class="stepone fwd-button" href="#posting">
+          <!-- <a class="stepone fwd-button" href="#posting">
             <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
             <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Sergio</span></span>
-          </a>
+          </a> -->
           
           <div class="stat"><spam class="white-text alpha-text"><spam class="blue-medium white-text">28,421 </spam>people have forwarded with Sergio</spam>
           </div>

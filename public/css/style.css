@@ -385,10 +385,6 @@ a:hover, a:focus{
 	line-height: 30px;	
 }
 
-#posting a.btn_round:hover {
-	background: rgba(120, 120, 120, .75);
-}
-
 #posting .btn_round_blue {
 	display: inline-block;
 	height: 30px;
@@ -517,6 +513,15 @@ a:hover, a:focus{
 
 .celebrity-info .fwd-btn{
 	width: 20px;
+}
+
+
+.play-btn{
+	top: 120px;
+	left: 237.5px;
+	height: 80px;
+	position: absolute;
+	z-index: 3;
 }
 
 .celebrity-info .fwd-button{
