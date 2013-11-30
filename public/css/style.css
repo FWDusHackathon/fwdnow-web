@@ -443,11 +443,11 @@ a:hover, a:focus{
 	vertical-align: bottom;
 }
 
-#fb-btn{
+.fb-btn{
 	background-color: #3b5998;
 }
 
-#tw-btn{
+.tw-btn{
 	background-color: #38a0f4;
 }
 

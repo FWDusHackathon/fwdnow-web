@@ -3,29 +3,19 @@
 <!-- fancybox, for modals -->
 <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.js"></script>
 <link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.css" />
-<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
 
-<script type="text/javascript">
-
-    function setInfo(id){
-      // alert("id: " +id);
-      console.log(id); 
-
-      <% 
-        celeb = {
-        :id => "ashton",
-        :name =>  "Ashton",
-        :twitter => "aplusk",
-        :pic => "http://fwdnow.us/img/Ashton2x.jpg",
-        :count => "57,891"
-      }%>
-    }
-
-    // function setInfo(name, pic, twitter){
-    //   alert("Name is: " +name +"\npic: " +pic +"\ntwitter: " +twitter);
-    // }
-</script>
 <script>
+
+  <% 
+    celeb = {
+      :id => "ashton",
+      :name =>  "Ashton",
+      :twitter => "aplusk",
+      :pic => "http://fwdnow.us/img/Ashton2x.jpg",
+      :count => "57,891"
+    }
+  %>
+
   $(document).ready(function() {
 
     $(".video").fancybox({
@@ -140,7 +130,8 @@
           <div id="featured-info-left">
             <div id="featured-quote">"#FWDnow to support immigration reform with me" &#8212; Ashton Kutcher</div>
 
-            <a id="button" class="fancybox stepone" href="#posting" onclick="setInfo('ashton-id')">
+            <a id="button" class="fancybox stepone" href="#posting" 
+              onclick="setInfo('Ashton', 'Ashton', 'aplusk', 'http://fwdnow.us/img/Ashton2x.jpg', '57,891')">
               <span><img src="img/btnFWD.png"></img></span>
               <span class="white-text">FWD now with&nbsp</span><span class="blue">Ashton</span>
             </a>
@@ -163,10 +154,11 @@
             <span class="black-text">"Immigration reform will put 11 million  people living in the United States on pathway to citizenship" <span class="signature">&#8212; Julianne Moore</span></span>
           </div>
           
-          <!-- <a class="stepone fwd-button" href="#posting">
+          <a class="stepone fwd-button" href="#posting"
+            onclick="setInfo('Julianne', 'Julianne', '_juliannemoore', 'http://fwdnow.us/img/Julianne-Small.jpg', '31,421')">
             <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
             <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Julianne</span></span>
-          </a> -->
+          </a>
 
           <div class="stat"><spam class="black-text"><spam class="blue-medium">31,421 </spam>people have forwarded with Julianne</spam>
           </div>
@@ -187,10 +179,11 @@
             <span><img class="play-btn" src="img/btnPlay.png"></img></span>
           </a>
 
-          <!-- <a class="stepone fwd-button" href="#posting">
+          <a class="stepone fwd-button" href="#posting"
+          onclick="setInfo('Taboo', 'Taboo', 'TabBep', 'http://fwdnow.us/img/Taboo-Small.jpg', '41,292')">
             <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
             <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Taboo</span></span>
-          </a> -->
+          </a>
           
           <div class="stat"><spam class="white-text"><spam class="blue-medium">41,292 </spam>people have forwarded with Taboo</spam></div>
         </div>
@@ -214,10 +207,11 @@
             <span><img class="play-btn" src="img/btnPlay.png"></img></span>
           </a>
 
-          <!-- <a class="stepone fwd-button" href="#posting">
+          <a class="stepone fwd-button" href="#posting"
+            onclick="setInfo('Aloe', 'Aloe', 'aloeblacc', 'http://fwdnow.us/img/Aloe-Small.jpg', '29,542')">
             <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
             <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Aloe</span></span>
-          </a> -->
+          </a>
           
           <div class="stat"><spam class="white-text"><spam class="blue-medium">29,542 </spam>people have forwarded with Aloe</spam>
           </div>
@@ -233,10 +227,11 @@
             <span class="black-text">Sarah Silverman signed a letter to President Obama and members of Congress urging them to pass a<br>bill that provides a 'clear<br>road map to citizenship' for<br>the nation's 11 million<br>unauthorized immigrants</span>
           </div>
           
-          <!-- <a class="stepone fwd-button" href="#posting">
+          <a class="stepone fwd-button" href="#posting"
+            onclick="setInfo('Sarah', 'Sarah', 'SarahKSilverman', 'http://fwdnow.us/img/Sarah-Small.jpg', '31,421')">
             <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
             <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Sarah</span></span>
-          </a> -->
+          </a>
           
           <div class="stat"><spam class="black-text"><spam class="blue-medium">31,421 </spam>people have forwarded with Sarah</spam></div>
         </div>
@@ -254,10 +249,11 @@
             <span class="white-text">"It's possible to both enforce our laws and, at the same time, embrace the words on the Statue of Liberty that have welcomed generations of huddled masses to our shores" &#8212; Oprah Winfrey</span>
           </div>
           
-          <!-- <a class="stepone fwd-button" href="#posting">
+          <a class="stepone fwd-button" href="#posting"
+            onclick="setInfo('Oprah', 'Oprah', 'Oprah', 'http://fwdnow.us/img/Oprah-Small.jpg', '59,271')">
             <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
             <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Oprah</span></span>
-          </a> -->
+          </a>
           
           <div class="stat"><spam class="white-text"><spam class="blue-medium">59,271 </spam>people have forwa<span class="alpha-text">rded with Oprah</spam>
           </div>
@@ -272,10 +268,11 @@
             <span class="white-text alpha-text">Eleven million undocumented people "deserve a chance to live their dream and we will all win<br>if they do" &#8212; Sergio Romo</span>
           </div>
           
-          <!-- <a class="stepone fwd-button" href="#posting">
+          <a class="stepone fwd-button" href="#posting"
+            onclick="setInfo('Sergio', 'Sergio', 'SergioRomo54', 'http://fwdnow.us/img/Sergio-Small.jpg', '28,421')">
             <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
             <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Sergio</span></span>
-          </a> -->
+          </a>
           
           <div class="stat"><spam class="white-text alpha-text"><spam class="blue-medium white-text">28,421 </spam>people have forwarded with Sergio</spam>
           </div>
@@ -286,43 +283,25 @@
 
 
 <!-- Step one: hidden at start - posting -->
-  <div id="posting">
-  <span class="description">I #FWDnow with
-    <%= celeb[:name] %>
-    to support immigration reform</span>
+<div id="posting">
+  <span class="description">I #FWDnow with <span class="celeb-name"></span> to support immigration reform</span>
 
-<a id="fb-btn" class="posting-btn popup" href="http://www.facebook.com/sharer.php?s=100
-    &p[url]=http://FWDnow.us/
-    <%= celeb[:name]%>
-    &p[images][0]=
-    <%= celeb[:pic]%>
-    &p[title]=I%20%23FWDnow%20with%20
-    <%= celeb[:name]%>
-    %20to%20Support%20Immigration%20Reform
-    &p[summary]=The%20time%20is%20now!%20%23ready4reform">
-<img src="img/btnFB.png"></img>
-  <span class="white-text btn-desc">Share on Facebook</span></span>
-</a> 
+  <a id="fb-popup" class="posting-btn fb-btn" href="">
+    <img src="img/btnFB.png"></img>
+    <span class="white-text btn-desc">Share on Facebook</span></span>
+  </a> 
 
-<a id="tw-btn" class="posting-btn popup" href="https://twitter.com/intent/tweet?text=I%20%23FWDnow%20with%20
-<%= celeb[:name]%>
-%20(%40
-<%= celeb[:twitter]%>
-)%20to%20support%20%23ImmigrationReform%3A&tw_p=tweetbutton&url=http%3A%2F%2FFWDnow.us%2F
-<%= celeb[:name]%>
-">
-  <img src="img/btnTwitter.png"></img>
-  <span class="white-text btn-desc">Share on Twitter</span></span>
-</a>
+  <a id="twitter-popup" class="posting-btn tw-btn" href="">
+    <img src="img/btnTwitter.png"></img>
+    <span class="white-text btn-desc">Share on Twitter</span></span>
+  </a>
 </div>
 
 <!-- Step two: hidden at start  - postcard -->
 <div id="postcard" style="width:800px; height:410px;">
   <div class="postcard_container">
     <span class="thankyou">Thank you!</span>
-    <span class="thankyou_sub">You + 
-      <%= celeb[:name]%> + 
-      <%= celeb[:count]%> people have forwarded so far.</span>
+    <span class="thankyou_sub">You + <span class="celeb-name"></span> + <span class="celeb-count"></span> people have forwarded so far.</span>
     <span><img src="img/heatmap.png" width="345px" /></span>
   </div>
   <div class="postcard_container">
@@ -369,22 +348,69 @@
 </script>
 
 <script>
-  $('.popup').click(function(event) {
+  
+  function setInfo(id, name, twitter, pic, count){
+
+    window.celebId = id;
+    window.celebName = name;
+    window.celebTwitter = twitter;
+    window.celebPic = pic;
+    window.celebCount = count;
+
+    $(".celeb-name").text(window.celebName);
+    $(".celeb-count").text(window.celebCount); 
+
+    console.log(window.celebId); 
+    console.log(window.celebName); 
+    console.log(window.celebTwitter); 
+    console.log(window.celebPic); 
+    console.log(window.celebCount);  
+  }
+
+  $('#twitter-popup').click(function(event) {
+    var width   = 575,
+        height  = 260,
+        left    = ($(window).width()  - width)  / 2,
+        top     = ($(window).height() - height) / 2,
+        name    = window.celebName,
+        twitter = window.celebTwitter,
+        twitter = (twitter ? "%20(%40" + twitter + ")%20" : "%20"),
+        text    = "text=I%20%23FWDnow%20with%20" + name + twitter + "to%20support%20%23ImmigrationReform%3A",
+        type    = "&tw_p=tweetbutton",
+        url     = "&url=http%3A%2F%2FFWDnow.us%2F" + name,
+        url     = "https://twitter.com/intent/tweet?" + text + type + url,
+        opts    = 'status=1' +
+                  ',width='  + width  +
+                  ',height=' + height +
+                  ',top='    + top    +
+                  ',left='   + left;
+    
+    window.open(url, 'twitter', opts);
+ 
+    return false;
+  });
+
+  $('#fb-popup').click(function(event) {
     var width  = 575,
         height = 260,
         left   = ($(window).width()  - width)  / 2,
         top    = ($(window).height() - height) / 2,
-        url    = this.href,
+        name   = window.celebName,
+        pic    = "&p[images][0]=" + window.celebPic,
+        title  = "&p[title]=I%20%23FWDnow%20with%20" + name + "%20to%20Support%20%23ImmigrationReform",
+        text   = "&p[summary]=The%20time%20is%20now!%20%23ready4reform",
+        url    = "p[url]=http://FWDnow.us/" + name, 
+        url    = "http://www.facebook.com/sharer.php?s=100&" + url + pic + title + text,
         opts   = 'status=1' +
                  ',width='  + width  +
                  ',height=' + height +
                  ',top='    + top    +
                  ',left='   + left;
     
-    window.open(url, 'twitter', opts);
+    window.open(url, 'fb', opts);
  
     return false;
-  });
+  });    
 </script>
 
 <script>
@@ -404,13 +430,6 @@
                  ',top='    + top    +
                  ',left='   + left;
           window.open(url, 'twitter', opts);
-
-      // popupwindow("https://twitter.com/share?" + $.param({
-      //   url: "http://FWDnow.us",
-      //   related: "fwd_us",
-      //   text: "I am moving #fwdnow with @shakira to support immigration reform. Join us" +(rep ? " Rep. @" + rep.twitter_id : "")
-      // }), 600, 300);
-
     });
 
     $('input#zipcode-tweet').change(function(e) {
