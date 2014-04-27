@@ -6,41 +6,61 @@
 
 <script>
 
-  <% 
-    celeb = {
-      :id => "ashton",
-      :name =>  "Ashton",
-      :twitter => "aplusk",
-      :pic => "http://fwdnow.us/img/Ashton2x.jpg",
-      :count => "57,891"
+<% 
+celeb = {
+  :id => "ashton",
+  :name =>  "Ashton",
+  :twitter => "aplusk",
+  :pic => "http://fwdnow.us/img/Ashton2x.jpg",
+  :count => "57,891"
+}
+%>
+
+$(document).ready(function() {
+
+  $(".video").fancybox({
+    maxWidth : 853,
+    maxHeight : 480,
+    openEffect  : 'none',
+    closeEffect : 'none',
+    helpers : {
+      media : {}
     }
-  %>
+  });
 
-  $(document).ready(function() {
-
-    $(".video").fancybox({
-      maxWidth : 853,
-      maxHeight : 480,
-      openEffect  : 'none',
-      closeEffect : 'none',
-      helpers : {
-        media : {}
+  $(".stepone").fancybox({
+    afterClose: function(){
+      stepTwo();
+      return false 
+    },
+    openEffect: 'none',
+    closeEffect: 'none',
+    autoSize: true,
+    minWidth: 250,
+    minHeight: 160,
+    padding: 15,
+    scrolling: 20,
+    helpers : {
+      overlay : {
+        css : {
+          'background' : 'rgba(0, 0, 0, 0.15)'
+        } 
       }
-    });
+    }
+  });
 
-    $(".stepone").fancybox({
-      afterClose: function(){
-        stepTwo();
-        return false 
-      },
-        openEffect: 'none',
-        closeEffect: 'none',
-        autoSize: true,
-        minWidth: 250,
-        minHeight: 160,
-        padding: 15,
-        scrolling: 20,
-        helpers : {
+  function stepTwo(){
+    $.fancybox.open([{
+      href: '#postcard'
+    }], {
+      openEffect: 'none',
+      closeEffect: 'none',
+      autoSize: true,
+      minWidth: 800,
+      minHeight: 380,
+      padding: 15,
+      scrolling: 20,
+      helpers : {
         overlay : {
           css : {
             'background' : 'rgba(0, 0, 0, 0.15)'
@@ -48,32 +68,12 @@
         }
       }
     });
+  }   
 
-    function stepTwo(){
-      $.fancybox.open([{
-          href: '#postcard'
-        }], {
-          openEffect: 'none',
-          closeEffect: 'none',
-          autoSize: true,
-          minWidth: 800,
-          minHeight: 380,
-          padding: 15,
-          scrolling: 20,
-          helpers : {
-          overlay : {
-            css : {
-              'background' : 'rgba(0, 0, 0, 0.15)'
-            } 
-          }
-        }
-      });
-    }   
-
-    $('#send_postcard').click(function(e) {
-      alert("This service is not available in your area yet.\n\nThank you for supporting immigration reform! Find out more at fwd.us");
-      window.location = "http://fwd.us";
-    });
+  $('#send_postcard').click(function(e) {
+    alert("This service is not available in your area yet.\n\nThank you for supporting immigration reform! Find out more at fwd.us");
+    window.location = "http://fwd.us";
+  });
 
     /*
       $.ajax('/api/send_postcard', {
@@ -86,44 +86,44 @@
       }}).always(function(response, status) {
         console.log(response, status);
       });
-    */
-  });
+*/
+});
 
-  <%
-    #this is not being used:
+<%
+#this is not being used:
 
-    #celebs = { :celeb => {
-    #    :id => "ashton", :attr => [
-    #      { :name => 'Ashton' },
-    #      { :twitter => 'aplusk' },
-    #      { :pic => 'http://fwdnow.us/img/Ashton2x.jpg' },
-    #      { :count => '57,891' }
-    #    ],
-    #    :id => "julianne", :attr => [
-    #      { :name => 'Julianne' },
-    #      { :twitter => 'julianne-twitter' },
-    #      { :pic => 'http://fwdnow.us/img/Julianne-Small.jpg' },
-    #      { :count => '31,421' }
-    #    ]
-    #  }
-    #}
+#celebs = { :celeb => {
+  #    :id => "ashton", :attr => [
+  #      { :name => 'Ashton' },
+  #      { :twitter => 'aplusk' },
+  #      { :pic => 'http://fwdnow.us/img/Ashton2x.jpg' },
+  #      { :count => '57,891' }
+  #    ],
+  #    :id => "julianne", :attr => [
+  #      { :name => 'Julianne' },
+  #      { :twitter => 'julianne-twitter' },
+  #      { :pic => 'http://fwdnow.us/img/Julianne-Small.jpg' },
+  #      { :count => '31,421' }
+  #    ]
+  #  }
+  #}
   %>
 
-</script>
+  </script>
 
-<a id="notice" href="http://www.fwd.us" target="_blank">Prototype built as part of the DREAMer hackathon - find out more at fwd.us</a>
+  <a id="notice" href="http://www.fwd.us" target="_blank">Prototype built as part of the DREAMer Hackathon &#8722; find out more at FWD.us</a>
 
-<div class="container">
-  <div class="row">
-        <div class="col-md-3" id="logo"><img src="img/FWDnowLogo.png"></div>
-    <div class="col-md-6" id="title">We are all for immigration reform, so let's move forward <span class="blue">now</span></div>
-        <div class="col-md-3" id="count"><span class="blue">279,259</span> forwards so far</div>
-       </div>
-     </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3" id="logo"><img src="img/FWDnowLogo.png"></div>
+      <div class="col-md-3 col-md-push-6" id="count"><span class="blue">279,259</span> forwards so far</div>
+      <div class="col-md-6 col-md-pull-3" id="title">We are all for immigration reform, so let's move forward <span class="blue">now</span></div>
+    </div>
+  </div>
 
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12" id="main">
+  <div class="container">
+    <div class="row">
+      <div class=" col-md-12" id="main">
         <div class="featured">
           <img src="img/Ashton2x.jpg"></img>
 
@@ -131,186 +131,186 @@
             <div id="featured-quote">"#FWDnow to support immigration reform with me" &#8212; Ashton Kutcher</div>
 
             <a id="button" class="fancybox stepone" href="#posting" 
-              onclick="setInfo('Ashton', 'Ashton', 'aplusk', 'http://fwdnow.us/img/Ashton2x.jpg', '57,891')">
-              <span><img src="img/btnFWD.png"></img></span>
-              <span class="white-text">FWD now with&nbsp</span><span class="blue">Ashton</span>
-            </a>
+            onclick="setInfo('Ashton', 'Ashton', 'aplusk', 'http://fwdnow.us/img/Ashton2x.jpg', '57,891')">
+            <span><img src="img/btnFWD.png"></img></span>
+            <span class="white-text">FWD now with&nbsp</span><span class="blue">Ashton</span>
+          </a>
 
-            <div id="featured-stat"><spam class="blue-big">57,891</spam>people have forwarded with Ashton</div>
-          </div>
+          <div id="featured-stat"><spam class="blue-big">57,891</spam>people have forwarded with Ashton</div>
         </div>
-          </div>
+      </div>
     </div>
   </div>
+</div>
 
-  <div class="container">
-    <div class="row">
+<div class="container">
+  <div class="row">
 
 
-      <div class="col-md-6 medium">  
-        <div class="celebrity-info">
-          <img class="celebrity-pic" src="img/Oprah-Small.jpg"></img>
-          
-          <div class="quote">
-            <span class="white-text">"It's possible to both enforce our laws and, at the same time, embrace the words on the Statue of Liberty that have welcomed generations of huddled masses to our shores" &#8212; Oprah Winfrey</span>
-          </div>
-          
-          <a class="stepone fwd-button" href="#posting"
-            onclick="setInfo('Oprah', 'Oprah', 'Oprah', 'http://fwdnow.us/img/Oprah-Small.jpg', '59,271')">
-            <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
-            <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Oprah</span></span>
-          </a>
-          
-          <div class="stat"><spam class="white-text"><spam class="blue-medium">59,271 </spam>people have forwa<span class="alpha-text">rded with Oprah</spam>
-          </div>
+    <div class="col-md-6 medium">  
+      <div class="celebrity-info">
+        <img class="celebrity-pic" src="img/Oprah-Small.jpg"></img>
+
+        <div class="quote">
+          <span class="white-text">"It's possible to both enforce our laws and, at the same time, embrace the words on the Statue of Liberty that have welcomed generations of huddled masses to our shores" &#8212; Oprah Winfrey</span>
         </div>
+
+        <a class="stepone fwd-button" href="#posting"
+        onclick="setInfo('Oprah', 'Oprah', 'Oprah', 'http://fwdnow.us/img/Oprah-Small.jpg', '59,271')">
+        <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
+        <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Oprah</span></span>
+      </a>
+
+      <div class="stat"><spam class="white-text"><spam class="blue-medium">59,271 </spam>people have forwa<span class="alpha-text">rded with Oprah</spam>
       </div>
-
-
-
-      <div class="col-md-6 medium">  
-        <div class="celebrity-info">
-          <img class="celebrity-pic" src="img/Aloe-Small.jpg"></img>
-          
-          <div class="quote">
-            <span class="title">"Wake me up"</span>
-            <span class="white-text">Aloe Blacc's new song supporting immigration reform by showing stories never told from undocumented immigrants</span>
-          </div>
-
-          <a class="video fancybox.iframe" href="http://www.youtube.com/embed/M_o6axAseak?fs=1&autoplay=1">
-            <span><img class="play-btn" src="img/btnPlay.png"></img></span>
-          </a>
-
-          <a class="stepone fwd-button" href="#posting"
-            onclick="setInfo('Aloe', 'Aloe', 'aloeblacc', 'http://fwdnow.us/img/Aloe-Small.jpg', '29,542')">
-            <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
-            <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Aloe</span></span>
-          </a>
-          
-          <div class="stat"><spam class="white-text"><spam class="blue-medium">29,542 </spam>people have forwarded with Aloe</spam>
-          </div>
-        </div>
-      </div>
-
-
-      
-
-
-
     </div>
   </div>
 
 
 
-  <div class="container">
-    <div class="row">
+  <div class="col-md-6 medium">  
+    <div class="celebrity-info">
+      <img class="celebrity-pic" src="img/Aloe-Small.jpg"></img>
 
-
-      <div class="col-md-6 medium">
-
-        <div class="celebrity-info">
-          <img class="celebrity-pic" src="img/Taboo-Small.jpg"></img>
-          
-          <div class="quote">
-            <span class="title">"One Heart, One Beat"</span>
-            <span class="white-text">Taboo's new song opposing Arizona's Bill 1070 against undocumented immigrants</span>
-          </div>
-          
-          <a class="video fancybox.iframe" href="http://www.youtube.com/embed/xaCxTO3Z3vk?fs=1&autoplay=1">
-            <span><img class="play-btn" src="img/btnPlay.png"></img></span>
-          </a>
-
-          <a class="stepone fwd-button" href="#posting"
-          onclick="setInfo('Taboo', 'Taboo', 'TabBep', 'http://fwdnow.us/img/Taboo-Small.jpg', '41,292')">
-            <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
-            <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Taboo</span></span>
-          </a>
-          
-          <div class="stat"><spam class="white-text"><spam class="blue-medium">41,292 </spam>people have forwarded with Taboo</spam></div>
-        </div>
+      <div class="quote">
+        <span class="title">"Wake me up"</span>
+        <span class="white-text">Aloe Blacc's new song supporting immigration reform by showing stories never told from undocumented immigrants</span>
       </div>
 
+      <a class="video fancybox.iframe" href="http://www.youtube.com/embed/M_o6axAseak?fs=1&autoplay=1">
+        <span><img class="play-btn" src="img/btnPlay.png"></img></span>
+      </a>
 
-      <div class="col-md-6 medium">
+      <a class="stepone fwd-button" href="#posting"
+      onclick="setInfo('Aloe', 'Aloe', 'aloeblacc', 'http://fwdnow.us/img/Aloe-Small.jpg', '29,542')">
+      <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
+      <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Aloe</span></span>
+    </a>
 
-        <div class="celebrity-info">
-          <img class="celebrity-pic" src="img/Julianne-Small.jpg"></img>
-          
-          <div class="quote">
-            <span class="black-text">"Immigration reform will put 11 million  people living in the United States on pathway to citizenship" <span class="signature">&#8212; Julianne Moore</span></span>
-          </div>
-          
-          <a class="stepone fwd-button" href="#posting"
-            onclick="setInfo('Julianne', 'Julianne', '_juliannemoore', 'http://fwdnow.us/img/Julianne-Small.jpg', '31,421')">
-            <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
-            <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Julianne</span></span>
-          </a>
+    <div class="stat"><spam class="white-text"><spam class="blue-medium">29,542 </spam>people have forwarded with Aloe</spam>
+    </div>
+  </div>
+</div>
 
-          <div class="stat"><spam class="black-text"><spam class="blue-medium">31,421 </spam>people have forwarded with Julianne</spam>
-          </div>
+
+
+
+
+
+</div>
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+
+
+    <div class="col-md-6 medium">
+
+      <div class="celebrity-info">
+        <img class="celebrity-pic" src="img/Taboo-Small.jpg"></img>
+
+        <div class="quote">
+          <span class="title">"One Heart, One Beat"</span>
+          <span class="white-text">Taboo's new song opposing Arizona's Bill 1070 against undocumented immigrants</span>
         </div>
-      </div>  
 
+        <a class="video fancybox.iframe" href="http://www.youtube.com/embed/xaCxTO3Z3vk?fs=1&autoplay=1">
+          <span><img class="play-btn" src="img/btnPlay.png"></img></span>
+        </a>
 
+        <a class="stepone fwd-button" href="#posting"
+        onclick="setInfo('Taboo', 'Taboo', 'TabBep', 'http://fwdnow.us/img/Taboo-Small.jpg', '41,292')">
+        <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
+        <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Taboo</span></span>
+      </a>
 
-      
-     
-
-
+      <div class="stat"><spam class="white-text"><spam class="blue-medium">41,292 </spam>people have forwarded with Taboo</spam></div>
     </div>
   </div>
 
-  <div class="container">
-    <div class="row">
-      
-      
 
-       <div class="col-md-6 medium">
+  <div class="col-md-6 medium">
 
-        <div class="celebrity-info">
-          <img class="celebrity-pic" src="img/Sarah-Small.jpg"></img>
-          
-          <div class="quote">
-            <span class="black-text">Sarah Silverman signed a letter to President Obama and members of Congress urging them to pass a<br>bill that provides a 'clear<br>road map to citizenship' for<br>the nation's 11 million<br>unauthorized immigrants</span>
-          </div>
-          
-          <a class="stepone fwd-button" href="#posting"
-            onclick="setInfo('Sarah', 'Sarah', 'SarahKSilverman', 'http://fwdnow.us/img/Sarah-Small.jpg', '31,421')">
-            <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
-            <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Sarah</span></span>
-          </a>
-          
-          <div class="stat"><spam class="black-text"><spam class="blue-medium">31,421 </spam>people have forwarded with Sarah</spam></div>
-        </div>
+    <div class="celebrity-info">
+      <img class="celebrity-pic" src="img/Julianne-Small.jpg"></img>
+
+      <div class="quote">
+        <span class="black-text">"Immigration reform will put 11 million  people living in the United States on pathway to citizenship" <span class="signature">&#8212; Julianne Moore</span></span>
       </div>
 
+      <a class="stepone fwd-button" href="#posting"
+      onclick="setInfo('Julianne', 'Julianne', '_juliannemoore', 'http://fwdnow.us/img/Julianne-Small.jpg', '31,421')">
+      <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
+      <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Julianne</span></span>
+    </a>
 
-
-      <div class="col-md-6 medium">
-        <div class="celebrity-info">
-          <img class="celebrity-pic" src="img/Sergio-Small.jpg"></img>
-          
-          <div class="quote">
-            <span class="white-text alpha-text">Eleven million undocumented people "deserve a chance to live their dream and we will all win<br>if they do" &#8212; Sergio Romo</span>
-          </div>
-          
-          <a class="stepone fwd-button" href="#posting"
-            onclick="setInfo('Sergio', 'Sergio', 'SergioRomo54', 'http://fwdnow.us/img/Sergio-Small.jpg', '28,421')">
-            <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
-            <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Sergio</span></span>
-          </a>
-          
-          <div class="stat"><spam class="white-text alpha-text"><spam class="blue-medium white-text">28,421 </spam>people have forwarded with Sergio</spam>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
+    <div class="stat"><spam class="black-text"><spam class="blue-medium">31,421 </spam>people have forwarded with Julianne</spam>
     </div>
   </div>
+</div>  
+
+
+
+
+
+
+
+</div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+
+
+   <div class="col-md-6 medium">
+
+    <div class="celebrity-info">
+      <img class="celebrity-pic" src="img/Sarah-Small.jpg"></img>
+
+      <div class="quote">
+        <span class="black-text">Sarah Silverman signed a letter to President Obama and members of Congress urging them to pass a<br>bill that provides a 'clear<br>road map to citizenship' for<br>the nation's 11 million<br>unauthorized immigrants</span>
+      </div>
+
+      <a class="stepone fwd-button" href="#posting"
+      onclick="setInfo('Sarah', 'Sarah', 'SarahKSilverman', 'http://fwdnow.us/img/Sarah-Small.jpg', '31,421')">
+      <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
+      <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Sarah</span></span>
+    </a>
+
+    <div class="stat"><spam class="black-text"><spam class="blue-medium">31,421 </spam>people have forwarded with Sarah</spam></div>
+  </div>
+</div>
+
+
+
+<div class="col-md-6 medium">
+  <div class="celebrity-info">
+    <img class="celebrity-pic" src="img/Sergio-Small.jpg"></img>
+
+    <div class="quote">
+      <span class="white-text alpha-text">Eleven million undocumented people "deserve a chance to live their dream and we will all win<br>if they do" &#8212; Sergio Romo</span>
+    </div>
+
+    <a class="stepone fwd-button" href="#posting"
+    onclick="setInfo('Sergio', 'Sergio', 'SergioRomo54', 'http://fwdnow.us/img/Sergio-Small.jpg', '28,421')">
+    <span><img class="fwd-btn" src="img/btnFWD.png"></img></span>
+    <span class="small-text"><span class="white-text">FWD now with&nbsp</span><span class="blue">Sergio</span></span>
+  </a>
+
+  <div class="stat"><spam class="white-text alpha-text"><spam class="blue-medium white-text">28,421 </spam>people have forwarded with Sergio</spam>
+  </div>
+</div>
+</div>
+
+
+
+
+
+</div>
+</div>
 
 
 <!-- Step one: hidden at start - posting -->
@@ -347,11 +347,11 @@
     </div>
 
     <div class="support">
-    <form action="https://secure.mcommons.com/profiles/join" method="post">
-      <input type="hidden" name="redirect_to" value="http://www.fwd.us/call_thank_you" />
-      <input type="hidden" name="mconnect" value="VO5368E793DE4ECCFA7910A7CC1D47A6FF" />
-      <span class="support_title"><span class="blue-circle">2</span>Call your congressman</span>
-      <span class="support_sub">Enter your information and we'll connect you to your representative:</span>
+      <form action="https://secure.mcommons.com/profiles/join" method="post">
+        <input type="hidden" name="redirect_to" value="http://www.fwd.us/call_thank_you" />
+        <input type="hidden" name="mconnect" value="VO5368E793DE4ECCFA7910A7CC1D47A6FF" />
+        <span class="support_title"><span class="blue-circle">2</span>Call your congressman</span>
+        <span class="support_sub">Enter your information and we'll connect you to your representative:</span>
         <input type="text" id="phone" name="person[phone]" class="input_big" placeholder="Phone Number">
         <input type="text" id="zipcode" name="person[postal_code]" class="input_sml" placeholder="Zipcode">
         <input type="submit" class="button button_blue input_btn" value="Call"/>
@@ -370,110 +370,110 @@
 </div>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-45960431-1', 'fwdnow.us');
-    ga('send', 'pageview');
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-45960431-1', 'fwdnow.us');
+ga('send', 'pageview');
 </script>
 
 <script>
-  
-  function setInfo(id, name, twitter, pic, count){
 
-    window.celebId = id;
-    window.celebName = name;
-    window.celebTwitter = twitter;
-    window.celebPic = pic;
-    window.celebCount = count;
+function setInfo(id, name, twitter, pic, count){
 
-    $(".celeb-name").text(window.celebName);
-    $(".celeb-count").text(window.celebCount); 
+  window.celebId = id;
+  window.celebName = name;
+  window.celebTwitter = twitter;
+  window.celebPic = pic;
+  window.celebCount = count;
 
-    console.log(window.celebId); 
-    console.log(window.celebName); 
-    console.log(window.celebTwitter); 
-    console.log(window.celebPic); 
-    console.log(window.celebCount);  
+  $(".celeb-name").text(window.celebName);
+  $(".celeb-count").text(window.celebCount); 
+
+  console.log(window.celebId); 
+  console.log(window.celebName); 
+  console.log(window.celebTwitter); 
+  console.log(window.celebPic); 
+  console.log(window.celebCount);  
+}
+
+$('#twitter-popup').click(function(event) {
+  var width   = 575,
+  height  = 260,
+  left    = ($(window).width()  - width)  / 2,
+  top     = ($(window).height() - height) / 2,
+  name    = window.celebName,
+  twitter = window.celebTwitter,
+  twitter = (twitter ? "%20(%40" + twitter + ")%20" : "%20"),
+  text    = "text=I%20%23FWDnow%20with%20" + name + twitter + "to%20support%20%23ImmigrationReform%3A",
+  type    = "&tw_p=tweetbutton",
+  url     = "&url=http%3A%2F%2FFWDnow.us%2F" + name,
+  url     = "https://twitter.com/intent/tweet?" + text + type + url,
+  opts    = 'status=1' +
+  ',width='  + width  +
+  ',height=' + height +
+  ',top='    + top    +
+  ',left='   + left;
+
+  window.open(url, 'twitter', opts);
+
+  return false;
+});
+
+$('#fb-popup').click(function(event) {
+  var width  = 575,
+  height = 260,
+  left   = ($(window).width()  - width)  / 2,
+  top    = ($(window).height() - height) / 2,
+  name   = window.celebName,
+  pic    = "&p[images][0]=" + window.celebPic,
+  title  = "&p[title]=I%20%23FWDnow%20with%20" + name + "%20to%20Support%20%23ImmigrationReform",
+  text   = "&p[summary]=The%20time%20is%20now!%20%23ready4reform",
+  url    = "p[url]=http://FWDnow.us/" + name, 
+  url    = "http://www.facebook.com/sharer.php?s=100&" + url + pic + title + text,
+  opts   = 'status=1' +
+  ',width='  + width  +
+  ',height=' + height +
+  ',top='    + top    +
+  ',left='   + left;
+
+  window.open(url, 'fb', opts);
+
+  return false;
+});    
+</script>
+
+<script>
+$('#twitter-share-button').click(function(e) {
+  e.preventDefault();
+  var rep = JSON.parse(localStorage.getItem('congressman'));
+  var width  = 575,
+  height = 260,
+  left   = ($(window).width()  - width)  / 2,
+  top    = ($(window).height() - height) / 2,
+  rep    = (rep ? "Rep. @" + rep.twitter_id + ": " : ""),
+  text   = rep + "I%20%23FWDnow%20for%20comprehensive%20%23ImmigrationReform.%20Please%20%23ActOnReform%20for%20US",
+  url    = "http://twitter.com/share?text=" +text,
+  opts   = 'status=1' +
+  ',width='  + width  +
+  ',height=' + height +
+  ',top='    + top    +
+  ',left='   + left;
+  window.open(url, 'twitter', opts);
+});
+
+$('input#zipcode-tweet').change(function(e) {
+  var zipcode = $('input#zipcode-tweet').val();
+  if (zipcode.length < 5) {
+    localStorage.removeItem('congressman');
   }
-
-  $('#twitter-popup').click(function(event) {
-    var width   = 575,
-        height  = 260,
-        left    = ($(window).width()  - width)  / 2,
-        top     = ($(window).height() - height) / 2,
-        name    = window.celebName,
-        twitter = window.celebTwitter,
-        twitter = (twitter ? "%20(%40" + twitter + ")%20" : "%20"),
-        text    = "text=I%20%23FWDnow%20with%20" + name + twitter + "to%20support%20%23ImmigrationReform%3A",
-        type    = "&tw_p=tweetbutton",
-        url     = "&url=http%3A%2F%2FFWDnow.us%2F" + name,
-        url     = "https://twitter.com/intent/tweet?" + text + type + url,
-        opts    = 'status=1' +
-                  ',width='  + width  +
-                  ',height=' + height +
-                  ',top='    + top    +
-                  ',left='   + left;
-    
-    window.open(url, 'twitter', opts);
- 
-    return false;
-  });
-
-  $('#fb-popup').click(function(event) {
-    var width  = 575,
-        height = 260,
-        left   = ($(window).width()  - width)  / 2,
-        top    = ($(window).height() - height) / 2,
-        name   = window.celebName,
-        pic    = "&p[images][0]=" + window.celebPic,
-        title  = "&p[title]=I%20%23FWDnow%20with%20" + name + "%20to%20Support%20%23ImmigrationReform",
-        text   = "&p[summary]=The%20time%20is%20now!%20%23ready4reform",
-        url    = "p[url]=http://FWDnow.us/" + name, 
-        url    = "http://www.facebook.com/sharer.php?s=100&" + url + pic + title + text,
-        opts   = 'status=1' +
-                 ',width='  + width  +
-                 ',height=' + height +
-                 ',top='    + top    +
-                 ',left='   + left;
-    
-    window.open(url, 'fb', opts);
- 
-    return false;
-  });    
-</script>
-
-<script>
-    $('#twitter-share-button').click(function(e) {
-      e.preventDefault();
-      var rep = JSON.parse(localStorage.getItem('congressman'));
-      var width  = 575,
-          height = 260,
-          left   = ($(window).width()  - width)  / 2,
-          top    = ($(window).height() - height) / 2,
-          rep    = (rep ? "Rep. @" + rep.twitter_id + ": " : ""),
-          text   = rep + "I%20%23FWDnow%20for%20comprehensive%20%23ImmigrationReform.%20Please%20%23ActOnReform%20for%20US",
-          url    = "http://twitter.com/share?text=" +text,
-          opts   = 'status=1' +
-                 ',width='  + width  +
-                 ',height=' + height +
-                 ',top='    + top    +
-                 ',left='   + left;
-          window.open(url, 'twitter', opts);
-    });
-
-    $('input#zipcode-tweet').change(function(e) {
-      var zipcode = $('input#zipcode-tweet').val();
-      if (zipcode.length < 5) {
-        localStorage.removeItem('congressman');
-      }
-      if (zipcode.length == 5) {
-        $.getJSON("https://congress.api.sunlightfoundation.com/legislators/locate", {
-          zip: zipcode,
-          apikey: "afab65a2fbb74ec5b72ea09d9ebfd938"
-        }, function(response) {
-          var house_reps = response.results.filter(function(rep) {
+  if (zipcode.length == 5) {
+    $.getJSON("https://congress.api.sunlightfoundation.com/legislators/locate", {
+      zip: zipcode,
+      apikey: "afab65a2fbb74ec5b72ea09d9ebfd938"
+    }, function(response) {
+      var house_reps = response.results.filter(function(rep) {
             // alert('zipcode: ' +zipcode +' rep twitter: '+rep.twitter_id);
             return rep.chamber === "house";
           });
@@ -485,11 +485,11 @@
             localStorage.setItem('congressman', JSON.stringify(our_rep));
           }
         });
-      }
-    });
-  </script>
+  }
+});
+</script>
 
-  
+
 
 <!-- 
 <div id="fb-root"></div>
@@ -500,7 +500,7 @@
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
- -->
+-->
  <!--<script>
    // twitter
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
