@@ -501,8 +501,8 @@ a:hover, a:focus{
 }
 
 .celebrity-info .play-btn{
-	top: 120px;
-	left: 237.5px;
+	top: 40%;
+	left: 43%;
 	height: 80px;
 	position: absolute;
 	z-index: 3;
@@ -510,8 +510,7 @@ a:hover, a:focus{
 
 .celebrity-info .fwd-button{
 	position: absolute;
-	top: 175px;
-	height: 35px;
+	top: 190px;
 	padding: 5px 15px;
 	min-width: 120px;
 	background-color: #525657;
@@ -520,5 +519,4 @@ a:hover, a:focus{
 	-moz-border-radius: 20px;
 	border-radius: 8px; 
 	margin-left: 20px;
-	margin-top: 28px;
 }
