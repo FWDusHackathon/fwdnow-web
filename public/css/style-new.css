@@ -42,22 +42,37 @@ body{
 }
 
 /* --------- header info --------*/
+#notice{
+	background-color: #38a0f4;
+	color: #fff;
+	width: 100%;
+	height: 100%;
+	line-height: 30px;
+	font-size: 14px;
+	text-align: center;
+	display: block;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#logo{
+	float: left;
+}
+
+#title{
+	text-align: center;
+}
+
+#total-count{
+	text-align: right;
+}
+
 @media all and (min-width: 1000px){
 	#notice{
-		background-color: #38a0f4;
-		color: #fff;
-		width: 100%;
-		height: 100%;
-		line-height: 30px;
 		font-size: 14px;
-		text-align: center;
-		display: block;
-		text-decoration: none;
-		cursor: pointer;
 	}
 
 	#logo{
-		float: left;
 		margin-top: 16px;
 	}
 
@@ -67,12 +82,10 @@ body{
 
 	#title{
 		padding: 30px 0px;
-		text-align: center;
 		font-size: 20px;
 	}
 
 	#total-count{
-		text-align: right;
 		padding-top: 34px;
 		font-size: 14px;
 	}
@@ -82,20 +95,10 @@ body{
 @media all and (max-width: 1000px){
 	
 	#notice{
-		background-color: #38a0f4;
-		color: #fff;
-		width: 100%;
-		height: 100%;
-		line-height: 30px;
-		font-size: 14px;
-		text-align: center;
-		display: block;
-		text-decoration: none;
-		cursor: pointer;
+		font-size: 12px;
 	}
 
 	#logo{
-		float: left;
 		margin-top: 16px;
 	}
 
@@ -105,13 +108,11 @@ body{
 
 	#title{
 		padding: 26px 0px;
-		text-align: center;
 		font-size: 18px;
-		//width: 100%;
+		padding-bottom: 10px;
 	}
 
 	#total-count{
-		float: right;
 		padding-top: 31px;
 		font-size: 12px;
 	}
@@ -119,22 +120,12 @@ body{
 
 /* small screen */
 @media all and (max-width: 600px){
-	
+
 	#notice{
-		background-color: #38a0f4;
-		color: #fff;
-		width: 100%;
-		height: 100%;
-		line-height: 30px;
 		font-size: 10px;
-		text-align: center;
-		display: block;
-		text-decoration: none;
-		cursor: pointer;
 	}
 
 	#logo{
-		float: left;
 		margin-top: 20px;
 	}
 
@@ -143,14 +134,12 @@ body{
 	}
 
 	#title{
-		padding: 30px 0px;
+		padding: 5px 0px;
 		padding-bottom: 10px;
-		text-align: center;
 		font-size: 15px;
 	}
 
 	#total-count{
-		text-align: right;
 		padding-top: 10px;
 		font-size: 10px;
 	}
@@ -166,17 +155,41 @@ body{
 	width: 100%;
 }
 
+.feature .description{
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	height: 100%;
+}
+
+.feature .fwdnow-button{
+	position: absolute;
+	background-color: #525657;
+	border:1px solid #;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 8px; 
+}
+
+.feature .count{
+	position:absolute;
+	padding-bottom: 10px;
+	bottom:0;
+	width: 100%;
+	font-size: 10px;
+}
+
+.feature .quote-character{
+	font-family: serif;
+}
+
 /* large screen */
 @media all and (min-width: 1000px){
 
 	.feature .description{
 		padding-top: 70px;
 		padding-left: 50px;
-		position: absolute;
-		z-index: 1;
-		top: 0;
-		left: 0;
-		height: 100%;
 	}
 
 	.feature .quote{
@@ -185,15 +198,9 @@ body{
 	}
 
 	.feature .fwdnow-button{
-		position: absolute;
 		top: 175px;
-		background-color: #525657;
 		padding: 10px 15px;
 		min-width: 165px;
-		border:1px solid #;
-		-webkit-border-radius: 20px;
-		-moz-border-radius: 20px;
-		border-radius: 8px; 
 	}
 
 	.feature .fwdnow-button img{
@@ -201,10 +208,7 @@ body{
 	}	
 
 	.feature .count{
-		position:absolute;
 		padding-bottom: 15px;
-		bottom:0;
-		width: 100%;
 	}
 
 	.feature .count .number{
@@ -212,7 +216,6 @@ body{
 	}
 
 	.feature .quote-character{
-		font-family: serif;
 		font-size: 28px;
 	}
 }
@@ -224,11 +227,6 @@ body{
 	.feature .description{
 		padding-top: 30px;
 		padding-left: 50px;
-		position: absolute;
-		z-index: 1;
-		top: 0;
-		left: 0;
-		height: 100%;
 	}
 
 	.feature .quote{
@@ -237,15 +235,9 @@ body{
 	}
 
 	.feature .fwdnow-button{
-		position: absolute;
 		top: 135px;
-		background-color: #525657;
 		padding: 5px 15px;
 		min-width: 165px;
-		border:1px solid #;
-		-webkit-border-radius: 20px;
-		-moz-border-radius: 20px;
-		border-radius: 8px; 
 		font-size: 12px;
 	}
 
@@ -254,10 +246,7 @@ body{
 	}
 
 	.feature .count{
-		position:absolute;
 		padding-bottom: 15px;
-		bottom:0;
-		width: 100%;
 		font-size: 12px;
 	}
 
@@ -266,35 +255,16 @@ body{
 	}
 
 	.feature .quote-character{
-		font-family: serif;
 		font-size: 22px;
 	}
 }
 
 /* small screen */
 @media all and (max-width: 600px){
-	
-	#notice{
-		background-color: #38a0f4;
-		color: #fff;
-		width: 100%;
-		height: 100%;
-		line-height: 30px;
-		font-size: 10px;
-		text-align: center;
-		display: block;
-		text-decoration: none;
-		cursor: pointer;
-	}
 
 	.feature .description{
 		padding-top: 15px;
 		padding-left: 35px;
-		position: absolute;
-		z-index: 1;
-		top: 0;
-		left: 0;
-		height: 100%;
 	}
 
 	.feature .quote{
@@ -303,15 +273,9 @@ body{
 	}
 
 	.feature .fwdnow-button{
-		position: absolute;
 		top: 75px;
-		background-color: #525657;
 		padding: 5px 10px;
 		min-width: 135px;
-		border:1px solid #;
-		-webkit-border-radius: 20px;
-		-moz-border-radius: 20px;
-		border-radius: 8px; 
 		font-size: 10px;
 	}
 
@@ -320,10 +284,7 @@ body{
 	}
 
 	.feature .count{
-		position:absolute;
 		padding-bottom: 10px;
-		bottom:0;
-		width: 100%;
 		font-size: 10px;
 	}
 
@@ -332,7 +293,6 @@ body{
 	}
 
 	.feature .quote-character{
-		font-family: serif;
 		font-size: 14px;
 	}
 }
