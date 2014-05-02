@@ -661,6 +661,7 @@ a:hover, a:focus{
 /* celebrities post */
 
 .celebrity-info{
+	height: 320px;
 	overflow: hidden;
 	position: relative;
 }
